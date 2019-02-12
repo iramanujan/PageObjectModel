@@ -1,9 +1,10 @@
 ﻿using CommonHelper.Helper.Attributes;
-using System.Configuration;
+using System.Runtime.Serialization;
 
 namespace CommonHelper.Helper.Config
 {
-    public class ToolConfigMember : ConfigurationSection
+    [DataContract(Namespace = "")]
+    public class ToolConfigMember
     {
 
         public enum LocalizationType
@@ -50,82 +51,73 @@ namespace CommonHelper.Helper.Config
             Grid = 2
         }
 
-        [ConfigurationProperty("Browser", DefaultValue = "Chrome", IsRequired = true)]
-        public BrowserType Browser
-        {
-            get => (BrowserType)this["Browser"];
-            set => value = (BrowserType)this["Browser"];
-        }
+        [DataMember(EmitDefaultValue = false, Order = 1)]
+        public string Tool { get; private set; }
 
-        [ConfigurationProperty("ExecutionType", DefaultValue = "Local", IsRequired = true)]
-        public WebDriverExecutionType ExecutionType
-        {
-            get => (WebDriverExecutionType)this["ExecutionType"];
-            set => value = (WebDriverExecutionType)this["ExecutionType"];
-        }
+        [DataMember(EmitDefaultValue = false, Order = 2)]
+        public string ToolAssembly { get; private set; }
 
-        [ConfigurationProperty("Localization", DefaultValue = "en", IsRequired = true)]
-        public LocalizationType Localization
-        {
-            get => (LocalizationType)this["Localization"];
-            set => value = (LocalizationType)this["Localization"];
-        }
+        [DataMember(EmitDefaultValue = false, Order = 3)]
+        public string PageIcons { get; private set; }
 
-        [ConfigurationProperty("CommandTimeout", DefaultValue = "90000", IsRequired = true)]
-        public double CommandTimeout
-        {
-            get => (double)this["CommandTimeout"];
-            set => value = (double)this["CommandTimeout"];
-        }
+        [DataMember(EmitDefaultValue = false, Order = 4)]
+        public string PageIconsSerializerClass { get; private set; }
 
+        [DataMember(EmitDefaultValue = false, Order = 5)]
+        public string PageLocators { get; private set; }
 
-        [ConfigurationProperty("PageLoadWait", DefaultValue = "90000", IsRequired = true)]
-        public double PageLoadWait
-        {
-            get => (double)this["PageLoadWait"];
-            set => value = (double)this["PageLoadWait"];
-        }
+        [DataMember(EmitDefaultValue = false, Order = 6)]
+        public string PageLocatorsSerializerClass { get; private set; }
 
-        [ConfigurationProperty("RootDownloadLocation", DefaultValue = @"C:\Automation\Download\", IsRequired = true)]
-        public string RootDownloadLocation
-        {
-            get => (string)this["RootDownloadLocation"];
-            set => value = (string)this["RootDownloadLocation"];
-        }
+        [DataMember(EmitDefaultValue = false, Order = 7)]
+        public string PageUrls { get; private set; }
 
-        [ConfigurationProperty("RootUploadLocation", DefaultValue = @"C:\Automation\Upload\", IsRequired = true)]
-        public string RootUploadLocation
-        {
-            get => (string)this["RootUploadLocation"];
-            set => value = (string)this["RootUploadLocation"];
-        }
+        [DataMember(EmitDefaultValue = false, Order = 8)]
+        public string PageUrlsSerializerClass { get; private set; }
 
+        [DataMember(EmitDefaultValue = false, Order = 9)]
+        public LocalizationType Localization { get; private set; }
 
-        [ConfigurationProperty("GridHost", DefaultValue = @"http://localhost:4444/", IsRequired = true)]
-        public string GridHost
-        {
-            get => (string)this["GridHost"];
-            set => value = (string)this["GridHost"];
-        }
+        [DataMember(EmitDefaultValue = false, Order = 10)]
+        public int ObjectWait { get; private set; }
+
+        [DataMember(EmitDefaultValue = false, Order = 11)]
+        public int PollTime { get; private set; }
+
+        [DataMember(EmitDefaultValue = false, Order = 12)]
+        public int PageLoadWait { get; private set; }
+
+        [DataMember(EmitDefaultValue = false, Order = 13)]
+        public int CommandTimeout { get; private set; }
+
+        [DataMember(EmitDefaultValue = true, Order = 14)]
+        public string PageLoadStrategy { get; private set; }
+
+        [DataMember(EmitDefaultValue = true, Order = 15)]
+        public bool NoCache { get; private set; }
+
+        [DataMember(EmitDefaultValue = false, Order = 16)]
+        public int WaitForFreeSlotOnHubTimeout { get; private set; }
+
+        [DataMember(EmitDefaultValue = false, Order = 17)]
+        public string ProfileName { get; private set; }
+
+        [DataMember(EmitDefaultValue = false, Order = 18)]
+        public BrowserType Browser { get; private set; }
+
+        [DataMember(EmitDefaultValue = false, Order = 19)]
+        public WebDriverExecutionType ExecutionType { get; private set; }
+
+        [DataMember(EmitDefaultValue = false, Order = 20)]
+        public string GridHost { get; private set; }
 
         public string GridUrl => GridHost + "wd/hub";
 
-        //WaitForFreeSlotOnHubTimeout
+        [DataMember(EmitDefaultValue = false, Order = 21)]
+        public string RootDownloadLocation { get; private set; }
 
-
-        [ConfigurationProperty("NoCache", DefaultValue = @"true", IsRequired = true)]
-        public bool NoCache
-        {
-            get => (bool)this["NoCache"];
-            set => value = (bool)this["NoCache"];
-        }
-
-        [ConfigurationProperty("WaitForFreeSlotOnHubTimeout", DefaultValue = @"500000", IsRequired = true)]
-        public int WaitForFreeSlotOnHubTimeout
-        {
-            get => (int)this["WaitForFreeSlotOnHubTimeout"];
-            set => value = (int)this["WaitForFreeSlotOnHubTimeout"];
-        }
+        [DataMember(EmitDefaultValue = false, Order = 22)]
+        public string RootUploadLocation { get; private set; }
 
     }
 }

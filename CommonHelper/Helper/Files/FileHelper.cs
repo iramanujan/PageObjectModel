@@ -36,6 +36,7 @@ namespace CommonHelper.Helper.Files
 
         public static IEnumerable<string[]> GetCsvFields(string path)
         {
+            return null;
             //WaitForFileCreated(path);
 
             //using (TextFieldParser parser = new TextFieldParser(path))

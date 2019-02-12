@@ -3,17 +3,12 @@ using CommonHelper.Helper.Log;
 using CommonHelper.Utils;
 using OpenQA.Selenium;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebDriverHelper.Interfaces.DriverFactory;
 using static CommonHelper.Helper.Config.ToolConfigMember;
 
 namespace WebDriverHelper.BrowserFactory
 {
-    public class BaseBrowser : IBaseBrowser
+    public class BaseBrowser
     {
         private IWebDriver webDriver = null;
         public BaseBrowser(IWebDriver webDriver)
@@ -62,7 +57,7 @@ namespace WebDriverHelper.BrowserFactory
                 catch (Exception ex)
                 {
                     Logger.Error($"Unable to Quit the browser. Reason: {ex.Message}");
-                    switch (ToolConfigReader.ToolConfigMembers.Browser)
+                    switch (ToolConfigReader.GetToolConfig().Browser)
                     {
                         case BrowserType.IE:
                             ProcessUtils.KillProcesses("iexplore");
@@ -86,10 +81,7 @@ namespace WebDriverHelper.BrowserFactory
             }
         }
 
-        public IBaseBrowser Refresh()
-        {
-            this
-        }
+   
 
         public void SwitchToWindowHandle(string windowHandle)
         {

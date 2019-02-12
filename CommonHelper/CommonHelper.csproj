@@ -43,6 +43,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +55,7 @@
     <Compile Include="Helper\Attributes\AttributeHelper.cs" />
     <Compile Include="Helper\Attributes\EnumAttribute.cs" />
     <Compile Include="Helper\Attributes\StringAttribute.cs" />
+    <Compile Include="Helper\Config\ToolConfigHandler.cs" />
     <Compile Include="Helper\Config\ToolConfigMember.cs" />
     <Compile Include="Helper\Config\ToolConfigReader.cs" />
     <Compile Include="Helper\Files\FileHelper.cs" />

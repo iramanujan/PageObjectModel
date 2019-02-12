@@ -2,10 +2,6 @@
 using CommonHelper.Setup.Download;
 using CommonHelper.Setup.Upload;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static CommonHelper.Helper.Config.ToolConfigMember;
 
 namespace WebDriverHelper.DriverFactory.Base
@@ -17,8 +13,8 @@ namespace WebDriverHelper.DriverFactory.Base
         {
         }
 
-        protected readonly Lazy<string> downloadLocation = new Lazy<string>(() => DownloadLocation.CreateWebDriverDirectory(ToolConfigReader.ToolConfigMembers.Browser.ToString() + ToolConfigReader.ToolConfigMembers.ExecutionType.ToString(), ToolConfigReader.ToolConfigMembers.RootDownloadLocation));
-        protected readonly Lazy<UploadLocation> uploadLocation = new Lazy<UploadLocation>(() => UploadLocation.Create(ToolConfigReader.ToolConfigMembers.Browser.ToString() + ToolConfigReader.ToolConfigMembers.ExecutionType.ToString(), true,ToolConfigReader.ToolConfigMembers.RootUploadLocation));
+        protected readonly Lazy<string> downloadLocation = new Lazy<string>(() => DownloadLocation.CreateWebDriverDirectory(ToolConfigReader.GetToolConfig().Browser.ToString() + ToolConfigReader.GetToolConfig().ExecutionType.ToString(), ToolConfigReader.GetToolConfig().RootDownloadLocation));
+        protected readonly Lazy<UploadLocation> uploadLocation = new Lazy<UploadLocation>(() => UploadLocation.Create(ToolConfigReader.GetToolConfig().Browser.ToString() + ToolConfigReader.GetToolConfig().ExecutionType.ToString(), true,ToolConfigReader.GetToolConfig().RootUploadLocation));
 
     }
 }

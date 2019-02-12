@@ -12,15 +12,9 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            //Console.Write(ToolConfigReader.ToolConfigMembers.Browser.ToString());
-            foo(LocalizationType.en);
-
+            Console.WriteLine(ToolConfigReader.GetToolConfig().Browser);
+            Console.WriteLine(ToolConfigReader.GetToolConfig().Tool);
             Console.ReadKey();
-        }
-
-        public static void foo(LocalizationType localizationType)
-        {
-            Console.Write(localizationType.ToString());
         }
     }
 }

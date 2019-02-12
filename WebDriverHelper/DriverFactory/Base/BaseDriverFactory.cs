@@ -1,16 +1,14 @@
 ﻿using CommonHelper.Helper.Config;
-using CommonHelper.Setup.Download;
 using CommonHelper.Setup.Upload;
 using OpenQA.Selenium;
 using System;
-using WebDriverHelper.Interfaces.DriverFactory;
 using static CommonHelper.Helper.Config.ToolConfigMember;
 
 namespace WebDriverHelper.DriverFactory.Base
 {
     public abstract class BaseDriverFactory
     {
-        protected static readonly ToolConfigMember toolConfigMember = ToolConfigReader.ToolConfigMembers;
+        protected static readonly ToolConfigMember toolConfigMember = ToolConfigReader.GetToolConfig();
         protected readonly TimeSpan commandTimeout = TimeSpan.FromMilliseconds(toolConfigMember.CommandTimeout);
 
         public abstract string DownloadLocationPath { get; }

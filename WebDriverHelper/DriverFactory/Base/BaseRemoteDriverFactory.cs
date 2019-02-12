@@ -5,10 +5,6 @@ using CommonHelper.Setup.Upload;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WebDriverHelper.Grid;
 using static CommonHelper.Helper.Config.ToolConfigMember;
 
@@ -23,20 +19,20 @@ namespace WebDriverHelper.DriverFactory.Base
 
         protected abstract ICapabilities Capabilities { get; }
 
-        protected readonly Lazy<string> downloadLocation = new Lazy<string>(() => DownloadLocation.CreateWebDriverDirectory(ToolConfigReader.ToolConfigMembers.Browser.ToString() + ToolConfigReader.ToolConfigMembers.ExecutionType.ToString(), ToolConfigReader.ToolConfigMembers.RootDownloadLocation));
-        protected readonly Lazy<UploadLocation> uploadLocation = new Lazy<UploadLocation>(() => UploadLocation.Create(ToolConfigReader.ToolConfigMembers.Browser.ToString() + ToolConfigReader.ToolConfigMembers.ExecutionType.ToString(), true, ToolConfigReader.ToolConfigMembers.RootUploadLocation));
+        protected readonly Lazy<string> downloadLocation = new Lazy<string>(() => DownloadLocation.CreateWebDriverDirectory(ToolConfigReader.GetToolConfig().Browser.ToString() + ToolConfigReader.GetToolConfig().ExecutionType.ToString(), ToolConfigReader.GetToolConfig().RootDownloadLocation));
+        protected readonly Lazy<UploadLocation> uploadLocation = new Lazy<UploadLocation>(() => UploadLocation.Create(ToolConfigReader.GetToolConfig().Browser.ToString() + ToolConfigReader.GetToolConfig().ExecutionType.ToString(), true, ToolConfigReader.GetToolConfig().RootUploadLocation));
 
 
         protected override void BeforeWebDriverSetupSetps()
         {
-            GridConfigHelper.WaitForFreeSlotOnHubForBrowser(ToolConfigReader.ToolConfigMembers.GridHost, TimeSpan.FromMilliseconds(ToolConfigReader.ToolConfigMembers.WaitForFreeSlotOnHubTimeout), ToolConfigReader.ToolConfigMembers.Browser.ToString());
+            GridConfigHelper.WaitForFreeSlotOnHubForBrowser(ToolConfigReader.GetToolConfig().GridHost, TimeSpan.FromMilliseconds(ToolConfigReader.GetToolConfig().WaitForFreeSlotOnHubTimeout), ToolConfigReader.GetToolConfig().Browser.ToString());
         }
 
         protected override IWebDriver WebDriverSetupSetps()
         {
-            Logger.LogExecute($"ATTEMPT TO CREATE REMOTE {ToolConfigReader.ToolConfigMembers.Browser.ToString().ToUpper()} DRIVER");
-            var remoteWebDriver = new RemoteWebDriver(new Uri(ToolConfigReader.ToolConfigMembers.GridUrl), Capabilities, TimeSpan.FromMilliseconds(ToolConfigReader.ToolConfigMembers.CommandTimeout));
-            Logger.LogExecute($"CREATED REMOTE {ToolConfigReader.ToolConfigMembers.Browser.ToString().ToUpper()} DRIVER ON HOST {GridConfigHelper.GetRemoteDriverHostName(remoteWebDriver, ToolConfigReader.ToolConfigMembers.GridHost)}");
+            Logger.LogExecute($"ATTEMPT TO CREATE REMOTE {ToolConfigReader.GetToolConfig().Browser.ToString().ToUpper()} DRIVER");
+            var remoteWebDriver = new RemoteWebDriver(new Uri(ToolConfigReader.GetToolConfig().GridUrl), Capabilities, TimeSpan.FromMilliseconds(ToolConfigReader.GetToolConfig().CommandTimeout));
+            Logger.LogExecute($"CREATED REMOTE {ToolConfigReader.GetToolConfig().Browser.ToString().ToUpper()} DRIVER ON HOST {GridConfigHelper.GetRemoteDriverHostName(remoteWebDriver, ToolConfigReader.GetToolConfig().GridHost)}");
             this.webDriver = remoteWebDriver;
             return remoteWebDriver;
         }

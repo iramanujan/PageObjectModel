@@ -24,7 +24,7 @@ namespace WebDriverHelper.DriverFactory.Chrome.Options
             options.AddArgument("test-type=browser");
             options.AddArgument("disable-infobars");
 
-            if (ToolConfigReader.ToolConfigMembers.NoCache)
+            if (ToolConfigReader.GetToolConfig().NoCache)
             {
                 options.AddArguments("--incognito");
             }
