@@ -57,18 +57,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrowserFactory\BaseBrowser.cs" />
+    <Compile Include="BrowserFactory\Browser.cs" />
     <Compile Include="DriverFactory\Chrome\Local\ChromeDriverLocal.cs" />
     <Compile Include="DriverFactory\Chrome\Options\ChromeDriverOptions.cs" />
     <Compile Include="DriverFactory\Base\BaseDriverFactory.cs" />
     <Compile Include="DriverFactory\Base\BaseLocalDriverFactory.cs" />
     <Compile Include="DriverFactory\Base\BaseRemoteDriverFactory.cs" />
+    <Compile Include="DriverFactory\Chrome\Remote\ChromeDriverRemote.cs" />
     <Compile Include="DriverFactory\InternetExplorer\Options\InternetExplorerDriverOptions.cs" />
     <Compile Include="Events\KeyboardEvents.cs" />
     <Compile Include="Events\MouseEvents.cs" />
+    <Compile Include="Grid\BrowserSlotsCountModel.cs" />
+    <Compile Include="Grid\BrowsersStatusModel.cs" />
     <Compile Include="Grid\GridConfigHelper.cs" />
+    <Compile Include="Grid\SlotCountModel.cs" />
     <Compile Include="HtmlAttributes\TagAttributes.cs" />
     <Compile Include="HtmlElements\HtmlElement\HtmlTextBox.cs" />
     <Compile Include="HtmlElements\BaseHtmlElement.cs" />
+    <Compile Include="Interfaces\DriverFactory\IBaseBrowser.cs" />
     <Compile Include="Interfaces\DriverFactory\IWebDriverFactory.cs" />
     <Compile Include="Interfaces\HtmlElements\Class1.cs" />
     <Compile Include="Interfaces\HtmlElements\IHtmlElement.cs" />
@@ -95,7 +102,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DriverFactory\Chrome\Remote\" />
     <Folder Include="DriverFactory\FireFox\Local\" />
     <Folder Include="DriverFactory\FireFox\Remote\" />
     <Folder Include="DriverFactory\InternetExplorer\Local\" />

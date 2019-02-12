@@ -32,7 +32,7 @@ namespace WebDriverHelper.BrowserFactory
 
         public void Close()
         {
-            throw new NotImplementedException();
+            this.webDriver.Close();
         }
 
         public IOptions Manage()
@@ -65,7 +65,6 @@ namespace WebDriverHelper.BrowserFactory
                     switch (ToolConfigReader.ToolConfigMembers.Browser)
                     {
                         case BrowserType.IE:
-                            //Killing IE driver process if exists
                             ProcessUtils.KillProcesses("iexplore");
                             ProcessUtils.KillProcesses("IEDriverServer");
                             break;
@@ -85,6 +84,11 @@ namespace WebDriverHelper.BrowserFactory
                     this.webDriver = null;
                 }
             }
+        }
+
+        public IBaseBrowser Refresh()
+        {
+            this
         }
 
         public void SwitchToWindowHandle(string windowHandle)

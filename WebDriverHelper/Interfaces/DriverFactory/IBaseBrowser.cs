@@ -26,5 +26,7 @@ namespace WebDriverHelper.Interfaces.DriverFactory
 
         void SwitchToWindowHandle(string windowHandle);
 
+        IBaseBrowser Refresh();
+
     }
 }
