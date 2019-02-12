@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium.Chrome;
+﻿using CommonHelper.Helper.Config;
+using OpenQA.Selenium.Chrome;
 using static CommonHelper.Helper.Config.ToolConfigMember;
 
 namespace WebDriverHelper.DriverFactory.Chrome.Options
@@ -22,6 +23,12 @@ namespace WebDriverHelper.DriverFactory.Chrome.Options
             options.AddArgument("--disable-default-apps");
             options.AddArgument("test-type=browser");
             options.AddArgument("disable-infobars");
+
+            if (ToolConfigReader.ToolConfigMembers.NoCache)
+            {
+                options.AddArguments("--incognito");
+            }
+
             options.AddArguments($"--lang={localizationType.ToString()}");
 
             return options;

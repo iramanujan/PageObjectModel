@@ -5,10 +5,10 @@ namespace WebDriverHelper.Interfaces.DriverFactory
 {
     interface IWebDriverFactory
     {
-        IWebDriver Create();
+        //void BeforeWebDriverSetupSetps();
+        
+        //IWebDriver WebDriverSetupSetps();
 
-        string DownloadLocation { get; }
-        //WebDriverUploadDirectory UploadLocation { get; }
-        LocalizationType Localization { get; }
+        //void AfterWebDriverSetupSetps(IWebDriver webDriver);
     }
 }

@@ -1,32 +1,47 @@
-﻿using OpenQA.Selenium;
+﻿using CommonHelper.Helper.Config;
+using CommonHelper.Helper.Files;
+using CommonHelper.Setup.Download;
+using CommonHelper.Setup.Upload;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using WebDriverHelper.DriverFactory.Base;
+using WebDriverHelper.DriverFactory.Chrome.Options;
 using static CommonHelper.Helper.Config.ToolConfigMember;
 
 namespace WebDriverHelper.DriverFactory.Chrome.Local
 {
-    class ChromeDriverLocal
+    class ChromeDriverLocal : BaseLocalDriverFactory
     {
+        private IWebDriver webDriver = null;
+        private ChromeOptions chromeOptions = null;
+        private ChromeDriverService chromeDriverService = null;
+
+        public override String DownloadLocationPath => downloadLocation.Value;
+
+        public override UploadLocation UploadLocation => uploadLocation.Value;
+
         public ChromeDriverLocal(LocalizationType localizationType) : base(localizationType)
         {
         }
 
-        protected override IWebDriver CreateDriver()
+        protected override void BeforeWebDriverSetupSetps()
         {
-            var options = ChromeDriverOptions.CreateDefaultChromeOptions(DownloadLocation, localizationType);
-            var service = ChromeDriverService.CreateDefaultService(FileUtils.GetCurrentlyExecutingDirectory());
-            var driver = new ChromeDriver(service, options, commandTimeout);
-            return driver;
+            this.chromeOptions = ChromeDriverOptions.CreateDefaultChromeOptions(DownloadLocationPath, Localization);
+            this.chromeDriverService = ChromeDriverService.CreateDefaultService(FileHelper.GetCurrentlyExecutingDirectory());
         }
 
-        private readonly Lazy<string> downloadLocation =
-            new Lazy<string>(
-                () => WebDriverInitUtils.CreateWebDriverDirectory(ToolConfig.Browser + ToolConfig.ExecutionType.ToString(), ToolConfig.RootDownloadLocation));
+        protected override IWebDriver WebDriverSetupSetps()
+        {
+            this.webDriver = new ChromeDriver(this.chromeDriverService, this.chromeOptions, commandTimeout);
+            return this.webDriver;
+        }
 
-        public override string DownloadLocation => downloadLocation.Value;
+        protected override void AfterWebDriverSetupSetps()
+        {
+            SetTimeOut(this.webDriver);
+            MaximizeBrowser(this.webDriver);
+        }
+
     }
 }

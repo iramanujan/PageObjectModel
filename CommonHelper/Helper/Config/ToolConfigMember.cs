@@ -86,6 +86,46 @@ namespace CommonHelper.Helper.Config
             set => value = (double)this["PageLoadWait"];
         }
 
+        [ConfigurationProperty("RootDownloadLocation", DefaultValue = @"C:\Automation\Download\", IsRequired = true)]
+        public string RootDownloadLocation
+        {
+            get => (string)this["RootDownloadLocation"];
+            set => value = (string)this["RootDownloadLocation"];
+        }
+
+        [ConfigurationProperty("RootUploadLocation", DefaultValue = @"C:\Automation\Upload\", IsRequired = true)]
+        public string RootUploadLocation
+        {
+            get => (string)this["RootUploadLocation"];
+            set => value = (string)this["RootUploadLocation"];
+        }
+
+
+        [ConfigurationProperty("GridHost", DefaultValue = @"http://localhost:4444/", IsRequired = true)]
+        public string GridHost
+        {
+            get => (string)this["GridHost"];
+            set => value = (string)this["GridHost"];
+        }
+
+        public string GridUrl => GridHost + "wd/hub";
+
+        //WaitForFreeSlotOnHubTimeout
+
+
+        [ConfigurationProperty("NoCache", DefaultValue = @"true", IsRequired = true)]
+        public bool NoCache
+        {
+            get => (bool)this["NoCache"];
+            set => value = (bool)this["NoCache"];
+        }
+
+        [ConfigurationProperty("WaitForFreeSlotOnHubTimeout", DefaultValue = @"500000", IsRequired = true)]
+        public int WaitForFreeSlotOnHubTimeout
+        {
+            get => (int)this["WaitForFreeSlotOnHubTimeout"];
+            set => value = (int)this["WaitForFreeSlotOnHubTimeout"];
+        }
 
     }
 }
