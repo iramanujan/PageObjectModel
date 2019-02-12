@@ -4,10 +4,15 @@ namespace CommonHelper.Helper.Config
 {
     public class ToolConfigReader
     {
-        private static readonly string ToolConfigSection = "ToolConfig";
+        public static readonly string ToolConfigSection = "ToolConfigMember";
+
         private static readonly ToolConfigMember toolConfigMember;
 
-        static ToolConfigReader() => toolConfigMember = ConfigurationManager.GetSection(ToolConfigSection) as ToolConfigMember;
-        public static ToolConfigMember ToolConfigMembers => toolConfigMember;
+        //static constructor to initialize only once per domain
+        static ToolConfigReader()
+        {
+            toolConfigMember = ConfigurationManager.GetSection(ToolConfigReader.ToolConfigSection) as ToolConfigMember;
+        }
+        public static ToolConfigMember GetToolConfig() => toolConfigMember;
     }
 }

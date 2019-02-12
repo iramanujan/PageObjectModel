@@ -1,70 +1,42 @@
 ﻿using CommonHelper.Helper.Config;
+using CommonHelper.Setup.Upload;
 using OpenQA.Selenium;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebDriverHelper.Interfaces.DriverFactory;
 using static CommonHelper.Helper.Config.ToolConfigMember;
 
 namespace WebDriverHelper.DriverFactory.Base
 {
-    public abstract class BaseDriverFactory : IWebDriverFactory
+    public abstract class BaseDriverFactory
     {
-        protected static readonly ToolConfigMember toolConfigMember = ToolConfigReader.ToolConfigMembers;
+        protected static readonly ToolConfigMember toolConfigMember = ToolConfigReader.GetToolConfig();
         protected readonly TimeSpan commandTimeout = TimeSpan.FromMilliseconds(toolConfigMember.CommandTimeout);
 
-        protected BaseDriverFactory(LocalizationType localizationType)
+        public abstract string DownloadLocationPath { get; }
+
+        public abstract UploadLocation UploadLocation { get; }
+
+        public LocalizationType Localization { get; }
+
+        protected BaseDriverFactory(LocalizationType localizationType) => Localization = localizationType;
+
+        protected abstract void BeforeWebDriverSetupSetps();
+
+        protected abstract IWebDriver WebDriverSetupSetps();
+
+        protected abstract void AfterWebDriverSetupSetps();
+
+        protected void SetTimeOut(IWebDriver webDriver)
         {
-            Localization = localizationType;
-        }
-
-
-
-        public abstract string DownloadLocation { get; }
-        //public abstract WebDriverUploadDirectory UploadLocation { get; }
-
-
-        public IWebDriver Create()
-        {
-            //BeforeWebDriverCreationAction()
-            //WebDriverCreationAction()
-            //AfterWebDriverCreationAction()
-            PreCreateActions();
-            var driver = CreateDriverAction();
-            PostCreateActions(driver);
-            return driver;
-        }
-
-        protected abstract IWebDriver CreateDriverAction();
-
-
-        protected virtual void PreCreateActions()
-        {
-
-        }
-
-
-        protected virtual void PostCreateActions(IWebDriver driver)
-        {
-            SetTimeOut(driver);
-            MaximizeBrowser(driver);
-        }
-
-        private void SetTimeOut(IWebDriver driver)
-        {
-            var timeouts = driver.Manage().Timeouts();
+            var timeouts = webDriver.Manage().Timeouts();
             timeouts.AsynchronousJavaScript = TimeSpan.FromSeconds(120);
             timeouts.ImplicitWait = TimeSpan.FromSeconds(1);
             timeouts.PageLoad = TimeSpan.FromSeconds(toolConfigMember.PageLoadWait);
         }
 
-        private void MaximizeBrowser(IWebDriver driver)
+        protected void MaximizeBrowser(IWebDriver webDriver)
         {
-            driver.Manage().Window.Maximize();
+            webDriver.Manage().Window.Maximize();
         }
 
-        public LocalizationType Localization { get; }
     }
 }

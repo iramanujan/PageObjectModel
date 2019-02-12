@@ -1,22 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CommonHelper.Helper.Config;
+using CommonHelper.Setup.Download;
+using CommonHelper.Setup.Upload;
+using System;
+using static CommonHelper.Helper.Config.ToolConfigMember;
 
 namespace WebDriverHelper.DriverFactory.Base
 {
-    public abstract class BaseLocalDriverFactory
+    public abstract class BaseLocalDriverFactory : BaseDriverFactory
     {
 
-        protected BaseLocalDriverFactory(BrowserLocalization localization) : base(localization) { }
+        protected BaseLocalDriverFactory(LocalizationType localizationType) : base(localizationType)
+        {
+        }
 
-        private readonly Lazy<WebDriverUploadDirectory> uploadLocation =
-            new Lazy<WebDriverUploadDirectory>(
-                () =>
-                    WebDriverUploadDirectory.Create(ToolConfig.Browser + ToolConfig.ExecutionType.ToString(), true,
-                        ToolConfig.RootUploadLocation));
+        protected readonly Lazy<string> downloadLocation = new Lazy<string>(() => DownloadLocation.CreateWebDriverDirectory(ToolConfigReader.GetToolConfig().Browser.ToString() + ToolConfigReader.GetToolConfig().ExecutionType.ToString(), ToolConfigReader.GetToolConfig().RootDownloadLocation));
+        protected readonly Lazy<UploadLocation> uploadLocation = new Lazy<UploadLocation>(() => UploadLocation.Create(ToolConfigReader.GetToolConfig().Browser.ToString() + ToolConfigReader.GetToolConfig().ExecutionType.ToString(), true,ToolConfigReader.GetToolConfig().RootUploadLocation));
 
-        public override WebDriverUploadDirectory UploadLocation => uploadLocation.Value;
     }
 }

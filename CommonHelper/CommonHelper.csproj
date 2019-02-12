@@ -43,6 +43,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,14 +55,20 @@
     <Compile Include="Helper\Attributes\AttributeHelper.cs" />
     <Compile Include="Helper\Attributes\EnumAttribute.cs" />
     <Compile Include="Helper\Attributes\StringAttribute.cs" />
+    <Compile Include="Helper\Config\ToolConfigHandler.cs" />
     <Compile Include="Helper\Config\ToolConfigMember.cs" />
     <Compile Include="Helper\Config\ToolConfigReader.cs" />
+    <Compile Include="Helper\Files\FileHelper.cs" />
     <Compile Include="Helper\Log\Logger.cs" />
     <Compile Include="Helper\Screenshot\Screenshot.cs" />
     <Compile Include="Helper\Wait\Waiter.cs" />
     <Compile Include="Interfaces\Screenshot\Class1.cs" />
     <Compile Include="Interfaces\Screenshot\IScreenshotable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Setup\Download\DownloadLocation.cs" />
+    <Compile Include="Setup\Upload\UploadLocation.cs" />
+    <Compile Include="Utils\ProcessUtils.cs" />
+    <Compile Include="Utils\ReflectionUtils.cs" />
     <Compile Include="Utils\ReportUtils.cs" />
   </ItemGroup>
   <ItemGroup>
