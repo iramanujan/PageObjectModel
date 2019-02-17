@@ -59,12 +59,12 @@
   <ItemGroup>
     <Compile Include="BrowserFactory\BaseBrowser.cs" />
     <Compile Include="BrowserFactory\Browser.cs" />
-    <Compile Include="DriverFactory\Chrome\Local\ChromeDriverLocal.cs" />
+    <Compile Include="DriverFactory\Chrome\Local\LocalChromeDriver.cs" />
     <Compile Include="DriverFactory\Chrome\Options\ChromeDriverOptions.cs" />
     <Compile Include="DriverFactory\Base\BaseDriverFactory.cs" />
     <Compile Include="DriverFactory\Base\BaseLocalDriverFactory.cs" />
     <Compile Include="DriverFactory\Base\BaseRemoteDriverFactory.cs" />
-    <Compile Include="DriverFactory\Chrome\Remote\ChromeDriverRemote.cs" />
+    <Compile Include="DriverFactory\Chrome\Remote\RemoteChromeDriver.cs" />
     <Compile Include="DriverFactory\InternetExplorer\Options\InternetExplorerDriverOptions.cs" />
     <Compile Include="Events\KeyboardEvents.cs" />
     <Compile Include="Events\MouseEvents.cs" />

@@ -25,10 +25,10 @@ namespace WebDriverHelper.JScript
         ScrollIntoViewScript = 2,
 
         [Description("return document.readyState")]
-        PageLoadScript = 3,
+        PageLoad = 3,
 
         [Description("return (typeof jQuery != 'undefined') && (jQuery.active === 0)")]
-        AjaxLoadScript = 4
+        AjaxLoad = 4
     }
 
     public static class JavaScript

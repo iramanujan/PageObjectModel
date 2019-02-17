@@ -1,17 +1,17 @@
 ﻿using CommonHelper.Helper.Config;
 using OpenQA.Selenium.Chrome;
-using static CommonHelper.Helper.Config.ToolConfigMember;
 
 namespace WebDriverHelper.DriverFactory.Chrome.Options
 {
     class ChromeDriverOptions
     {
-        public static ChromeOptions CreateDefaultChromeOptions(string downloadLocation, LocalizationType localizationType)
+        private static readonly ToolConfigMember toolConfigMember = ToolConfigReader.GetToolConfig();
+        public static ChromeOptions CreateDefaultChromeOptions()
         {
             var options = new ChromeOptions();
 
             options.AddUserProfilePreference("safebrowsing.enabled", true);
-            options.AddUserProfilePreference("download.default_directory", downloadLocation);
+            options.AddUserProfilePreference("download.default_directory", toolConfigMember.RootDownloadLocation);
 
             options.AddArguments("--test-type");
             options.AddArguments("--no-sandbox");
@@ -29,7 +29,7 @@ namespace WebDriverHelper.DriverFactory.Chrome.Options
                 options.AddArguments("--incognito");
             }
 
-            options.AddArguments($"--lang={localizationType.ToString()}");
+            options.AddArguments($"--lang={toolConfigMember.Localization.ToString()}");
 
             return options;
         }
