@@ -8,7 +8,7 @@ using WebDriverHelper.Interfaces.DriverFactory;
 
 namespace WebDriverHelper.DriverFactory.FireFox.Local
 {
-    public class LocalFireFoxDriverFactory : BaseLocalDriverFactory, IWebDriverFactory
+    public class LocalFireFoxDriver : BaseLocalDriverFactory, IWebDriverFactory
     {
         
         private FirefoxOptions firefoxOptions = null;

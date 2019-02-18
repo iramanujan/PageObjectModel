@@ -11,7 +11,7 @@ using WebDriverHelper.Interfaces.DriverFactory;
 
 namespace WebDriverHelper.DriverFactory.Chrome.Remote
 {
-    public class LocalChromeDriver : BaseRemoteDriverFactory, IWebDriverFactory
+    public class RemoteChromeDriver : BaseRemoteDriverFactory, IWebDriverFactory
     {
         private IWebDriver webDriver = null;
 

@@ -11,9 +11,6 @@ D:\POM\POM\CommonHelper\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramew
 D:\POM\POM\CommonHelper\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 D:\POM\POM\CommonHelper\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 D:\POM\POM\CommonHelper\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
-D:\Office-Doc\PageObjectModel\CommonHelper\obj\Debug\CommonHelper.csproj.CoreCompileInputs.cache
-D:\Office-Doc\PageObjectModel\CommonHelper\obj\Debug\CommonHelper.dll
-D:\Office-Doc\PageObjectModel\CommonHelper\obj\Debug\CommonHelper.pdb
 D:\Office-Doc\PageObjectModel\CommonHelper\bin\Debug\CommonHelper.dll
 D:\Office-Doc\PageObjectModel\CommonHelper\bin\Debug\CommonHelper.pdb
 D:\Office-Doc\PageObjectModel\CommonHelper\bin\Debug\log4net.dll
@@ -22,5 +19,7 @@ D:\Office-Doc\PageObjectModel\CommonHelper\bin\Debug\Microsoft.VisualStudio.Test
 D:\Office-Doc\PageObjectModel\CommonHelper\bin\Debug\log4net.xml
 D:\Office-Doc\PageObjectModel\CommonHelper\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 D:\Office-Doc\PageObjectModel\CommonHelper\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\Office-Doc\PageObjectModel\CommonHelper\obj\Debug\CommonHelper.csproj.CoreCompileInputs.cache
 D:\Office-Doc\PageObjectModel\CommonHelper\obj\Debug\CommonHelper.csproj.CopyComplete
-D:\Office-Doc\PageObjectModel\CommonHelper\obj\Debug\CommonHelper.csprojAssemblyReference.cache
+D:\Office-Doc\PageObjectModel\CommonHelper\obj\Debug\CommonHelper.dll
+D:\Office-Doc\PageObjectModel\CommonHelper\obj\Debug\CommonHelper.pdb

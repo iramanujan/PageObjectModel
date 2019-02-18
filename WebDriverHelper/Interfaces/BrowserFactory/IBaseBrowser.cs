@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using System.Collections.ObjectModel;
 
-namespace WebDriverHelper.Interfaces.DriverFactory
+namespace WebDriverHelper.Interfaces.BrowserFactory
 {
     interface IBaseBrowser
     {

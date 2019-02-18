@@ -5,17 +5,17 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using System;
 using WebDriverHelper.DriverFactory.Base;
-using WebDriverHelper.DriverFactory.FireFox.Profile;
+using WebDriverHelper.DriverFactory.InternetExplorer.Options;
 using WebDriverHelper.Grid;
 using WebDriverHelper.Interfaces.DriverFactory;
 
-namespace WebDriverHelper.DriverFactory.FireFox.Remote
+namespace WebDriverHelper.DriverFactory.InternetExplorer.Remote
 {
-    public class RemoteFireFoxDriverFactory : BaseRemoteDriverFactory, IWebDriverFactory
+    public class RemoteInternetExplorerDriver : BaseRemoteDriverFactory, IWebDriverFactory
     {
         private IWebDriver webDriver = null;
 
-        protected override ICapabilities Capabilities => FireFoxDriverProfile.CreateDefaultFirefoxOptions().ToCapabilities();
+        protected override ICapabilities Capabilities => InternetExplorerDriverOptions.GetInternetExplorerOptions().ToCapabilities();
 
         private void BeforeWebDriverSetupSetps()
         {

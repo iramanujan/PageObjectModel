@@ -15,6 +15,7 @@ namespace WebDriverHelper.BrowserFactory
         {
             this.webDriver = webDriver;
         }
+
         public string Url { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public string Title => throw new NotImplementedException();
@@ -80,8 +81,6 @@ namespace WebDriverHelper.BrowserFactory
                 }
             }
         }
-
-   
 
         public void SwitchToWindowHandle(string windowHandle)
         {

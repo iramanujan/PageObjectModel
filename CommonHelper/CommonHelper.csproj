@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Headspring\Enumeration.cs" />
     <Compile Include="Helper\Attributes\AttributeHelper.cs" />
     <Compile Include="Helper\Attributes\EnumAttribute.cs" />
     <Compile Include="Helper\Attributes\StringAttribute.cs" />

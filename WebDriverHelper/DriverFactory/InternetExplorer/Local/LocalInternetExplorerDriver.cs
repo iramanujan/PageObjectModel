@@ -8,7 +8,7 @@ using WebDriverHelper.Interfaces.DriverFactory;
 
 namespace WebDriverHelper.DriverFactory.InternetExplorer.Local
 {
-    public class LocalInternetExplorerDriverFactory : BaseLocalDriverFactory, IWebDriverFactory
+    public class LocalInternetExplorerDriver : BaseLocalDriverFactory, IWebDriverFactory
     {
         private IWebDriver webDriver = null;
         private InternetExplorerOptions internetExplorerOptions = null;

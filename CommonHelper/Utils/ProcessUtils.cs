@@ -50,5 +50,18 @@ namespace CommonHelper.Utils
                 () => Process.GetProcessesByName(processName).Length > 0, TimeSpan.FromSeconds(30),
                 TimeSpan.FromSeconds(1), "The process '" + processName + "' still not running");
         }
+
+        public static void KillProcessByCmd(string processName)
+        {
+            Logger.LogExecute("Kill processes if any by name {0}", processName);
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C taskkill /F /IM " + processName + " /T";
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+        }
     }
 }

@@ -67,12 +67,13 @@
     <Compile Include="DriverFactory\Base\BaseLocalDriverFactory.cs" />
     <Compile Include="DriverFactory\Base\BaseRemoteDriverFactory.cs" />
     <Compile Include="DriverFactory\Chrome\Remote\RemoteChromeDriver.cs" />
-    <Compile Include="DriverFactory\FireFox\Local\LocalFireFoxDriverFactory.cs" />
+    <Compile Include="DriverFactory\FireFox\Local\LocalFireFoxDriver.cs" />
     <Compile Include="DriverFactory\FireFox\Profile\FireFoxDriverProfile.cs" />
-    <Compile Include="DriverFactory\FireFox\Remote\RemoteFireFoxDriverFactory.cs" />
-    <Compile Include="DriverFactory\InternetExplorer\Local\LocalInternetExplorerDriverFactory.cs" />
+    <Compile Include="DriverFactory\FireFox\Remote\RemoteFireFoxDriver.cs" />
+    <Compile Include="DriverFactory\InternetExplorer\Local\LocalInternetExplorerDriver.cs" />
     <Compile Include="DriverFactory\InternetExplorer\Options\InternetExplorerDriverOptions.cs" />
-    <Compile Include="DriverFactory\InternetExplorer\Remote\RemoteInternetExplorerDriverFactory.cs" />
+    <Compile Include="DriverFactory\InternetExplorer\Remote\RemoteInternetExplorerDriver.cs" />
+    <Compile Include="DriverFactory\WebDriverFactory.cs" />
     <Compile Include="Events\KeyboardEvents.cs" />
     <Compile Include="Events\MouseEvents.cs" />
     <Compile Include="Grid\BrowserSlotsCountModel.cs" />
@@ -82,7 +83,7 @@
     <Compile Include="HtmlAttributes\TagAttributes.cs" />
     <Compile Include="HtmlElements\HtmlElement\HtmlTextBox.cs" />
     <Compile Include="HtmlElements\BaseHtmlElement.cs" />
-    <Compile Include="Interfaces\DriverFactory\IBaseBrowser.cs" />
+    <Compile Include="Interfaces\BrowserFactory\IBaseBrowser.cs" />
     <Compile Include="Interfaces\DriverFactory\IWebDriverFactory.cs" />
     <Compile Include="Interfaces\HtmlElements\Class1.cs" />
     <Compile Include="Interfaces\HtmlElements\IHtmlElement.cs" />
@@ -108,7 +109,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DriverFactory\Edge\Local\" />
+    <Folder Include="DriverFactory\Edge\Remote\" />
+    <Folder Include="DriverFactory\Opera\Local\" />
+    <Folder Include="DriverFactory\Opera\Remote\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Selenium.Chrome.WebDriver.2.45\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.2.45\build\Selenium.Chrome.WebDriver.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
