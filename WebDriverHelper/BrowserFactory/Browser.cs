@@ -55,25 +55,25 @@ namespace WebDriverHelper.BrowserFactory
 
         public bool WaitTillPageLoad(int numberOfSeconds)
         {
-            try
-            {
-                Wait(numberOfSeconds).Until((driver) =>
-                {
-                    try
-                    {
-                        return ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState").ToString().Contains("complete");
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e);
-                        return false;
-                    }
-                });
-            }
-            catch (WebDriverTimeoutException)
-            {
-                // If timeout, then page is not loaded. For all other exceptions, do not catch.
-            }
+            //try
+            //{
+            //    Wait(numberOfSeconds).Until((driver) =>
+            //    {
+            //        try
+            //        {
+            //            return ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState").ToString().Contains("complete");
+            //        }
+            //        catch (Exception e)
+            //        {
+            //            Console.WriteLine(e);
+            //            return false;
+            //        }
+            //    });
+            //}
+            //catch (WebDriverTimeoutException)
+            //{
+            //    // If timeout, then page is not loaded. For all other exceptions, do not catch.
+            //}
             return false;
         }
     }

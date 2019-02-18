@@ -4,23 +4,25 @@ using OpenQA.Selenium.Chrome;
 using System;
 using WebDriverHelper.DriverFactory.Base;
 using WebDriverHelper.DriverFactory.Chrome.Options;
+using WebDriverHelper.Interfaces.DriverFactory;
 
 namespace WebDriverHelper.DriverFactory.Chrome.Local
 {
-    class LocalChromeDriver : BaseLocalDriverFactory
+    public class LocalChromeDriver : BaseLocalDriverFactory, IWebDriverFactory
     {
         private IWebDriver webDriver = null;
         private ChromeOptions chromeOptions = null;
         private ChromeDriverService chromeDriverService = null;
 
-        protected void BeforeWebDriverSetupSetps()
+        private void BeforeWebDriverSetupSetps()
         {
             this.chromeOptions = ChromeDriverOptions.CreateDefaultChromeOptions();
             this.chromeDriverService = ChromeDriverService.CreateDefaultService(FileHelper.GetCurrentlyExecutingDirectory());
         }
 
-        protected IWebDriver WebDriverSetupSetps()
+        public IWebDriver InitializeWebDriver()
         {
+            BeforeWebDriverSetupSetps();
             webDriver = new ChromeDriver(chromeDriverService, chromeOptions, TimeSpan.FromSeconds(toolConfigMember.CommandTimeout));
             return this.webDriver;
         }

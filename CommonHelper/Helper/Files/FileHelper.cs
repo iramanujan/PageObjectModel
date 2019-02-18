@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
-
 namespace CommonHelper.Helper.Files
 {
     public class FileHelper
@@ -31,6 +30,7 @@ namespace CommonHelper.Helper.Files
 
         public static string GetCurrentlyExecutingDirectory()
         {
+            //return AppDomain.CurrentDomain.BaseDirectory;
             return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Path.DirectorySeparatorChar;
         }
 
