@@ -27,7 +27,7 @@ namespace WebDriverHelper.DriverFactory.FireFox.Local
         public IWebDriver InitializeWebDriver()
         {
             BeforeWebDriverSetupSetps();
-            var firefoxDriver = new FirefoxDriver(firefoxDriverService, firefoxOptions, TimeSpan.FromSeconds(30));
+            var firefoxDriver = new FirefoxDriver(firefoxDriverService, firefoxOptions, TimeSpan.FromSeconds(toolConfigMember.CommandTimeout));
             return firefoxDriver;
         }
     }

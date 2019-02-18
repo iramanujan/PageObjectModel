@@ -4,7 +4,7 @@ namespace WebDriverHelper.DriverFactory.InternetExplorer.Options
 {
     class InternetExplorerDriverOptions
     {
-        public static InternetExplorerOptions GetChromeOptionsInternetExplorerOptions()
+        public static InternetExplorerOptions GetInternetExplorerOptions()
         {
             InternetExplorerOptions options = new InternetExplorerOptions();
             options.IntroduceInstabilityByIgnoringProtectedModeSettings = true;

@@ -1,6 +1,5 @@
 ﻿using CommonHelper.Helper.Config;
 using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Remote;
 using System;
 
 namespace WebDriverHelper.DriverFactory.FireFox.Profile
@@ -33,13 +32,12 @@ namespace WebDriverHelper.DriverFactory.FireFox.Profile
             return profile;
         }
 
-        internal static FirefoxOptions Options()
+        internal static FirefoxOptions CreateDefaultFirefoxOptions()
         {
             FirefoxOptions firefoxOptions = new FirefoxOptions();
             firefoxOptions.SetPreference(FirefoxDriver.ProfileCapabilityName, FireFoxDriverProfile.CreateProfile().ToBase64String());
             firefoxOptions.ToCapabilities();
-
-            return null;
+            return firefoxOptions;
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using CommonHelper.Helper.Config;
-using WebDriverHelper.DriverFactory;
 using WebDriverHelper.DriverFactory.Chrome.Local;
 using WebDriverHelper.DriverFactory.FireFox.Local;
+using WebDriverHelper.DriverFactory.InternetExplorer.Local;
 
 namespace ConsoleApp1
 {
@@ -9,17 +9,23 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            LocalChromeDriver ObjLocalChromeDriver = new LocalChromeDriver();
-            var obj = ObjLocalChromeDriver.InitializeWebDriver();
-            obj.Navigate().GoToUrl(ToolConfigReader.GetToolConfig().PageUrls);
-            obj.Close();
-            obj.Quit();
+            string url = ToolConfigReader.GetToolConfig().PageUrls;
 
-            var firObj = new LocalFireFoxDriverFactory().InitializeWebDriver();
+            var ObjLocalChromeDriver = new LocalChromeDriver().InitializeWebDriver();
+            ObjLocalChromeDriver.Navigate().GoToUrl(url);
+            ObjLocalChromeDriver.Close();
+            ObjLocalChromeDriver.Quit();
 
-            firObj.Navigate().GoToUrl(ToolConfigReader.GetToolConfig().PageUrls);
-            firObj.Close();
-            firObj.Quit();
+            var ObjLocalFireFoxDriverFactory = new LocalFireFoxDriverFactory().InitializeWebDriver();
+            ObjLocalFireFoxDriverFactory.Navigate().GoToUrl(url);
+            ObjLocalFireFoxDriverFactory.Close();
+            ObjLocalFireFoxDriverFactory.Quit();
+
+            var ObjLocalInternetExplorerDriverFactory = new LocalInternetExplorerDriverFactory().InitializeWebDriver();
+            ObjLocalInternetExplorerDriverFactory.Navigate().GoToUrl(url);
+            ObjLocalInternetExplorerDriverFactory.Close();
+            ObjLocalInternetExplorerDriverFactory.Quit();
+
 
             //Console.WriteLine(ToolConfigReader.GetToolConfig().Browser);
             //Console.WriteLine(ToolConfigReader.GetToolConfig().Tool);
