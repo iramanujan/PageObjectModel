@@ -119,5 +119,11 @@ namespace CommonHelper.Helper.Config
         [DataMember(EmitDefaultValue = false, Order = 22)]
         public string RootUploadLocation { get; private set; }
 
+
+        [DataMember(EmitDefaultValue = false, Order = 23)]
+        public int AsynchronousJavaScriptWait { get; private set; }
+
+        [DataMember(EmitDefaultValue = false, Order = 24)]
+        public int ImplicitWait { get; private set; }
     }
 }

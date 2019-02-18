@@ -22,3 +22,10 @@ D:\Office-Doc\PageObjectModel\ConsoleApp1\bin\Debug\log4net.dll
 D:\Office-Doc\PageObjectModel\ConsoleApp1\bin\Debug\CommonHelper.pdb
 D:\Office-Doc\PageObjectModel\ConsoleApp1\bin\Debug\log4net.xml
 D:\Office-Doc\PageObjectModel\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CopyComplete
+D:\Office-Doc\PageObjectModel\ConsoleApp1\bin\Debug\WebDriver.dll
+D:\Office-Doc\PageObjectModel\ConsoleApp1\bin\Debug\WebDriverHelper.dll
+D:\Office-Doc\PageObjectModel\ConsoleApp1\bin\Debug\Newtonsoft.Json.dll
+D:\Office-Doc\PageObjectModel\ConsoleApp1\bin\Debug\WebDriverHelper.pdb
+D:\Office-Doc\PageObjectModel\ConsoleApp1\bin\Debug\WebDriver.xml
+D:\Office-Doc\PageObjectModel\ConsoleApp1\bin\Debug\Newtonsoft.Json.pdb
+D:\Office-Doc\PageObjectModel\ConsoleApp1\bin\Debug\Newtonsoft.Json.xml

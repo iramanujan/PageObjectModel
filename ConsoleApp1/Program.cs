@@ -1,10 +1,7 @@
 ﻿using CommonHelper.Helper.Config;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static CommonHelper.Helper.Config.ToolConfigMember;
+using WebDriverHelper.DriverFactory;
+using WebDriverHelper.DriverFactory.Chrome.Local;
+using WebDriverHelper.DriverFactory.FireFox.Local;
 
 namespace ConsoleApp1
 {
@@ -12,9 +9,21 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(ToolConfigReader.GetToolConfig().Browser);
-            Console.WriteLine(ToolConfigReader.GetToolConfig().Tool);
-            Console.ReadKey();
+            LocalChromeDriver ObjLocalChromeDriver = new LocalChromeDriver();
+            var obj = ObjLocalChromeDriver.InitializeWebDriver();
+            obj.Navigate().GoToUrl(ToolConfigReader.GetToolConfig().PageUrls);
+            obj.Close();
+            obj.Quit();
+
+            var firObj = new LocalFireFoxDriverFactory().InitializeWebDriver();
+
+            firObj.Navigate().GoToUrl(ToolConfigReader.GetToolConfig().PageUrls);
+            firObj.Close();
+            firObj.Quit();
+
+            //Console.WriteLine(ToolConfigReader.GetToolConfig().Browser);
+            //Console.WriteLine(ToolConfigReader.GetToolConfig().Tool);
+            //Console.ReadKey();
         }
     }
 }
