@@ -9,9 +9,9 @@ using static CommonHelper.Helper.Config.ToolConfigMember;
 
 namespace WebDriverHelper.DriverFactory
 {
-    public static class WebDriverFactory
+    public class WebDriverFactory
     {
-        public static IWebDriverFactory CreateWebDriverFactory(BrowserType browserType, WebDriverExecutionType webDriverExecutionType)
+        public IWebDriverFactory CreateWebDriverFactory(BrowserType browserType, WebDriverExecutionType webDriverExecutionType)
         {
             IWebDriverFactory webDriverFactory = null;
 

@@ -32,7 +32,6 @@ D:\Office-Doc\PageObjectModel\OrangeHRMTest\bin\Debug\WebDriverHelper.dll
 D:\Office-Doc\PageObjectModel\OrangeHRMTest\bin\Debug\WebDriver.Support.dll
 D:\Office-Doc\PageObjectModel\OrangeHRMTest\bin\Debug\CommonHelper.dll
 D:\Office-Doc\PageObjectModel\OrangeHRMTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
-D:\Office-Doc\PageObjectModel\OrangeHRMTest\bin\Debug\WebDriver.dll
 D:\Office-Doc\PageObjectModel\OrangeHRMTest\bin\Debug\Newtonsoft.Json.dll
 D:\Office-Doc\PageObjectModel\OrangeHRMTest\bin\Debug\log4net.dll
 D:\Office-Doc\PageObjectModel\OrangeHRMTest\bin\Debug\OrangeHRM.pdb
@@ -42,7 +41,6 @@ D:\Office-Doc\PageObjectModel\OrangeHRMTest\bin\Debug\WebDriverHelper.pdb
 D:\Office-Doc\PageObjectModel\OrangeHRMTest\bin\Debug\WebDriver.Support.xml
 D:\Office-Doc\PageObjectModel\OrangeHRMTest\bin\Debug\CommonHelper.pdb
 D:\Office-Doc\PageObjectModel\OrangeHRMTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
-D:\Office-Doc\PageObjectModel\OrangeHRMTest\bin\Debug\WebDriver.xml
 D:\Office-Doc\PageObjectModel\OrangeHRMTest\bin\Debug\Newtonsoft.Json.pdb
 D:\Office-Doc\PageObjectModel\OrangeHRMTest\bin\Debug\Newtonsoft.Json.xml
 D:\Office-Doc\PageObjectModel\OrangeHRMTest\bin\Debug\log4net.xml
@@ -51,3 +49,4 @@ D:\Office-Doc\PageObjectModel\OrangeHRMTest\obj\Debug\OrangeHRMTest.csproj.CoreC
 D:\Office-Doc\PageObjectModel\OrangeHRMTest\obj\Debug\OrangeHRMTest.csproj.CopyComplete
 D:\Office-Doc\PageObjectModel\OrangeHRMTest\obj\Debug\OrangeHRMTest.dll
 D:\Office-Doc\PageObjectModel\OrangeHRMTest\obj\Debug\OrangeHRMTest.pdb
+D:\Office-Doc\PageObjectModel\OrangeHRMTest\bin\Debug\packages.config

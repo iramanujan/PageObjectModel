@@ -23,3 +23,5 @@ D:\Office-Doc\PageObjectModel\CommonHelper\obj\Debug\CommonHelper.csproj.CoreCom
 D:\Office-Doc\PageObjectModel\CommonHelper\obj\Debug\CommonHelper.csproj.CopyComplete
 D:\Office-Doc\PageObjectModel\CommonHelper\obj\Debug\CommonHelper.dll
 D:\Office-Doc\PageObjectModel\CommonHelper\obj\Debug\CommonHelper.pdb
+D:\Office-Doc\PageObjectModel\CommonHelper\bin\Debug\packages.config
+D:\Office-Doc\PageObjectModel\CommonHelper\obj\Debug\CommonHelper.csprojAssemblyReference.cache

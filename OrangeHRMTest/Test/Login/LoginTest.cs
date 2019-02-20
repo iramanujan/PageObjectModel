@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OrangeHRM.PageSteps;
+using OrangeHRMTest.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace OrangeHRMTest.Test.Login
 {
     [TestFixture]
-    public class LoginTest
+    public class LoginTest : BaseWebTest
     {
         private LoginStep ObjLoginStep;
 

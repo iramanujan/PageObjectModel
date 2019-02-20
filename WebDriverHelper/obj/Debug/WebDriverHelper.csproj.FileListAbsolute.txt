@@ -39,3 +39,4 @@ D:\Office-Doc\PageObjectModel\WebDriverHelper\obj\Debug\WebDriverHelper.csproj.C
 D:\Office-Doc\PageObjectModel\WebDriverHelper\obj\Debug\WebDriverHelper.csproj.CopyComplete
 D:\Office-Doc\PageObjectModel\WebDriverHelper\obj\Debug\WebDriverHelper.dll
 D:\Office-Doc\PageObjectModel\WebDriverHelper\obj\Debug\WebDriverHelper.pdb
+D:\Office-Doc\PageObjectModel\WebDriverHelper\bin\Debug\packages.config

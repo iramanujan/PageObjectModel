@@ -1,10 +1,36 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System.Collections.ObjectModel;
 
 namespace WebDriverHelper.Interfaces.BrowserFactory
 {
-    interface IBaseBrowser
+    public interface IBaseBrowser
     {
+
+        void Close();
+        void Quit();
+        void Dispose();
+        void CloseCurrentTab();
+
+        IBaseBrowser Back();
+        IBaseBrowser Forward();
+        IBaseBrowser Refresh();
+        IBaseBrowser OpenUrl(string url);
+        IBaseBrowser ClearCookies();
+        IBaseBrowser Maximize();
+
+        void ScrollToTop();
+        void ScrollToBottom();
+
+        string GetUrl();
+        string GetDecodedUrl();
+
+
+        ReadOnlyCollection<string> GetWindowHandles();
+        void SwitchToWindowHandle(string windowHandle);
+        void SwitchHandleToNewWindowByPartialUrl(string urlPart);
+        string CurrentWindowHandle { get; }
+        ReadOnlyCollection<string> WindowHandles{ get; }
 
         string Url { get; set; }
 
@@ -12,21 +38,20 @@ namespace WebDriverHelper.Interfaces.BrowserFactory
 
         string PageSource { get; }
 
-        string CurrentWindowHandle { get; }
-
-        ReadOnlyCollection<string> WindowHandles { get; }
-
-        void Close();
 
         IOptions Manage();
 
         INavigation Navigate();
 
-        void Quit();
+        ITargetLocator SwitchTo();
 
-        void SwitchToWindowHandle(string windowHandle);
-
-        IBaseBrowser Refresh();
+        bool WaitTillPageLoad();
+        bool WaitTillPageLoad(int numberOfSeconds);
+        WebDriverWait Wait(int numberOfSeconds);
+        WebDriverWait Wait();
+        bool WaitTillAjaxLoad();
+        bool WaitTillAjaxLoad(int numberOfSeconds);
+        bool WaitTillAjaxLoadIfExists(int numberOfSeconds = -1);
 
     }
 }

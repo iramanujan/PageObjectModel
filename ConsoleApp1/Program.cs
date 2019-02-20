@@ -10,7 +10,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
 
-            var ObjLocalChromeDriver = WebDriverFactory.CreateWebDriverFactory(ToolConfigReader.GetToolConfig().Browser, ToolConfigReader.GetToolConfig().ExecutionType).InitializeWebDriver();
+            var ObjLocalChromeDriver = new WebDriverFactory().CreateWebDriverFactory(ToolConfigReader.GetToolConfig().Browser, ToolConfigReader.GetToolConfig().ExecutionType).InitializeWebDriver();
             string url = ToolConfigReader.GetToolConfig().PageUrls;
 
             //var ObjLocalChromeDriver = new LocalChromeDriver().InitializeWebDriver();

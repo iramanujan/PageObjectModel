@@ -68,6 +68,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup\Download\DownloadLocation.cs" />
     <Compile Include="Setup\Upload\UploadLocation.cs" />
+    <Compile Include="Utils\HttpUtility.cs" />
     <Compile Include="Utils\ProcessUtils.cs" />
     <Compile Include="Utils\ReflectionUtils.cs" />
     <Compile Include="Utils\ReportUtils.cs" />
@@ -76,7 +77,9 @@
     <Folder Include="Helper\NUnit\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

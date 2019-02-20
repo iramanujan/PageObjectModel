@@ -59,8 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BrowserFactory\BaseBrowser.cs" />
-    <Compile Include="BrowserFactory\Browser.cs" />
+    <Compile Include="BrowserFactory\BrowserFactory.cs" />
     <Compile Include="DriverFactory\Chrome\Local\LocalChromeDriver.cs" />
     <Compile Include="DriverFactory\Chrome\Options\ChromeDriverOptions.cs" />
     <Compile Include="DriverFactory\Base\BaseDriverFactory.cs" />
@@ -99,6 +98,7 @@
     <Compile Include="Interfaces\Events\IMouseEvents.cs" />
     <Compile Include="JScript\JavaScript.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Synchronization\BrowserFactory\SyncBrowserFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CommonHelper\CommonHelper.csproj">

@@ -3,23 +3,20 @@ using System;
 using System.Diagnostics;
 using System.Threading;
 
-
 namespace CommonHelper.Helper.Wait
 {
     public class Waiter
     {
         #region Fields
-
         private readonly TimeSpan CheckInterval;
         private readonly Stopwatch Stopwatch;
         private readonly TimeSpan Timeout;
-        private bool IsSatisfy = true;
         private Exception LastException;
-
         #endregion
 
-        #region Constructors and Destructors
+        public bool IsSatisfied { get; private set; } = true;
 
+        #region Constructors
         public Waiter(TimeSpan timeout) : this(timeout, TimeSpan.FromSeconds(1))
         {
         }
@@ -30,16 +27,6 @@ namespace CommonHelper.Helper.Wait
             this.CheckInterval = checkInterval;
             this.Stopwatch = Stopwatch.StartNew();
         }
-
-        #endregion
-
-        #region Public Properties
-
-        public bool IsSatisfied
-        {
-            get { return this.IsSatisfy; }
-        }
-
         #endregion
 
         #region Public Methods and Operators
@@ -77,7 +64,7 @@ namespace CommonHelper.Helper.Wait
 
         public void EnsureSatisfied()
         {
-            if (!this.IsSatisfy)
+            if (!this.IsSatisfied)
             {
                 string message = string.Empty;
                 if (this.LastException != null)
@@ -90,7 +77,7 @@ namespace CommonHelper.Helper.Wait
 
         public void EnsureSatisfied(string message)
         {
-            if (!this.IsSatisfy)
+            if (!this.IsSatisfied)
             {
                 if (this.LastException != null)
                 {
@@ -108,7 +95,7 @@ namespace CommonHelper.Helper.Wait
 
         public Waiter WaitFor(Func<bool> condition)
         {
-            if (!this.IsSatisfy)
+            if (!this.IsSatisfied)
             {
                 return this;
             }
@@ -119,7 +106,7 @@ namespace CommonHelper.Helper.Wait
 
                 if (sleepAmount < TimeSpan.Zero)
                 {
-                    this.IsSatisfy = false;
+                    this.IsSatisfied = false;
                     break;
                 }
                 Thread.Sleep(sleepAmount);
@@ -130,7 +117,7 @@ namespace CommonHelper.Helper.Wait
 
         #endregion
 
-        #region Methods
+        #region Private Methods
         private bool Try(Func<bool> condition)
         {
             try

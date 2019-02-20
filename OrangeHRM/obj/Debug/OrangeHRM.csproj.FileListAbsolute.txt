@@ -47,3 +47,4 @@ D:\Office-Doc\PageObjectModel\OrangeHRM\obj\Debug\OrangeHRM.csproj.CoreCompileIn
 D:\Office-Doc\PageObjectModel\OrangeHRM\obj\Debug\OrangeHRM.csproj.CopyComplete
 D:\Office-Doc\PageObjectModel\OrangeHRM\obj\Debug\OrangeHRM.dll
 D:\Office-Doc\PageObjectModel\OrangeHRM\obj\Debug\OrangeHRM.pdb
+D:\Office-Doc\PageObjectModel\OrangeHRM\bin\Debug\packages.config

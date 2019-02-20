@@ -16,24 +16,35 @@ namespace WebDriverHelper.JScript
                      "    }" +
                      "}" +
                      "return text;")]
-        NodeTextWithoutChildrenScript = 0,
+        NodeTextWithoutChildren = 0,
 
         [Description("arguments[0].style.visibility='visible'; arguments[0].style.opacity = 1;")]
         ChooseFile = 1,
 
         [Description("arguments[0].scrollIntoView(false)")]
-        ScrollIntoViewScript = 2,
+        ScrollToElementWithFalse = 2,
 
         [Description("return document.readyState")]
         PageLoad = 3,
 
         [Description("return (typeof jQuery != 'undefined') && (jQuery.active === 0)")]
-        AjaxLoad = 4
+        AjaxLoad = 4,
+
+        [Description("$(window).scrollTop(0)")]
+        ScrollTop = 5,
+
+        [Description("$(window).scrollTop($(document).height())")]
+        ScrollBottom = 6,
+
+        [Description("arguments[0].scrollIntoView(true)")]
+        ScrollToElementWithTrue = 7,
     }
 
-    public static class JavaScript
+    public class JavaScript
     {
-        public static object ExecuteScript(JScriptType jScriptType, IWebDriver webDriver)
+
+        #region Execute Script
+        public object ExecuteScript(JScriptType jScriptType, IWebDriver webDriver)
         {
             try
             {
@@ -46,7 +57,7 @@ namespace WebDriverHelper.JScript
             return null;
         }
 
-        public static object ExecuteScript(JScriptType jScriptType, IWebDriver webDriver, IWebElement webElement)
+        public object ExecuteScript(JScriptType jScriptType, IWebDriver webDriver, IWebElement webElement)
         {
             try
             {
@@ -58,5 +69,101 @@ namespace WebDriverHelper.JScript
             }
             return null;
         }
+
+        public object ExecuteScript(string javaScript, IWebDriver webDriver)
+        {
+            try
+            {
+                return ((IJavaScriptExecutor)webDriver).ExecuteScript(javaScript);
+            }
+            catch (WebDriverTimeoutException)
+            {
+                Logger.Debug(String.Format("Error: Exception thrown while running JS Script:{0}{1}", Environment.NewLine, javaScript));
+            }
+            return null;
+        }
+
+        public object ExecuteScript(string javaScript, IWebDriver webDriver, IWebElement webElement)
+        {
+            try
+            {
+                return ((IJavaScriptExecutor)webDriver).ExecuteScript(javaScript, webElement);
+            }
+            catch (WebDriverTimeoutException)
+            {
+                Logger.Debug(String.Format("Error: Exception thrown while running JS Script:{0}{1}", Environment.NewLine, javaScript));
+            }
+            return null;
+        }
+        #endregion
+
+        #region Execute Async Script
+        public object ExecuteAsyncScript(JScriptType jScriptType, IWebDriver webDriver)
+        {
+            try
+            {
+                return ((IJavaScriptExecutor)webDriver).ExecuteAsyncScript(jScriptType.GetDescription());
+            }
+            catch (WebDriverTimeoutException)
+            {
+                Logger.Debug(String.Format("Error: Exception thrown while running JS Script:{0}{1}", Environment.NewLine, jScriptType.GetDescription()));
+            }
+            return null;
+        }
+
+        public object ExecuteAsyncScript(JScriptType jScriptType, IWebDriver webDriver, IWebElement webElement)
+        {
+            try
+            {
+                return ((IJavaScriptExecutor)webDriver).ExecuteAsyncScript(jScriptType.GetDescription(), webElement);
+            }
+            catch (WebDriverTimeoutException)
+            {
+                Logger.Debug(String.Format("Error: Exception thrown while running JS Script:{0}{1}", Environment.NewLine, jScriptType.GetDescription()));
+            }
+            return null;
+        }
+
+        public object ExecuteAsyncScript(string javaScript, IWebDriver webDriver)
+        {
+            try
+            {
+                return ((IJavaScriptExecutor)webDriver).ExecuteAsyncScript(javaScript);
+            }
+            catch (WebDriverTimeoutException)
+            {
+                Logger.Debug(String.Format("Error: Exception thrown while running JS Script:{0}{1}", Environment.NewLine, javaScript));
+            }
+            return null;
+        }
+
+        public object ExecuteAsyncScript(string javaScript, IWebDriver webDriver, IWebElement webElement)
+        {
+            try
+            {
+                return ((IJavaScriptExecutor)webDriver).ExecuteAsyncScript(javaScript, webElement);
+            }
+            catch (WebDriverTimeoutException)
+            {
+                Logger.Debug(String.Format("Error: Exception thrown while running JS Script:{0}{1}", Environment.NewLine, javaScript));
+            }
+            return null;
+        }
+        #endregion
+
+        public string GetCookieNameByJavaScript(string cookieName, IWebDriver webDriver)
+        {
+            var script = $@"var n='{cookieName}'+'=';var cookies=decodeURIComponent(document.cookie).split(';');" +
+                    @"for(var i=0;i<cookies.length;i++){var c=cookies[i];while (c.charAt(0)==' '){" +
+                    @"c=c.substring(1);}if (c.indexOf(n)==0&&c.length!=n.length)" +
+                    @"{return c.substring(n.length, c.length);}}return ''";
+            return ExecuteScript(script, webDriver) as string;
+        }
+
+        public void ClearLocalStorageByJavaScript(string key, IWebDriver webDriver)
+        {
+            ExecuteScript($"delete localStorage['{key}']", webDriver);
+        }
+
     }
 }
