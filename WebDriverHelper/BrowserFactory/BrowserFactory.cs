@@ -13,7 +13,7 @@ using WebDriverHelper.Synchronization.BrowserFactory;
 
 namespace WebDriverHelper.BrowserFactory
 {
-    public class BrowserFactory : SyncBrowserFactory
+    public class BrowserFactory : PageSynchronization
     {
         private readonly IWebDriverFactory webDriverFactory;
         private IWebDriver objWebDriver;

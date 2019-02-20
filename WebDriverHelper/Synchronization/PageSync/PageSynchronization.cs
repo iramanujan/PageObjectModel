@@ -7,17 +7,17 @@ using WebDriverHelper.JScript;
 
 namespace WebDriverHelper.Synchronization.BrowserFactory
 {
-    public class SyncBrowserFactory : JavaScript
+    public class PageSynchronization : JavaScript
     {
         public readonly ToolConfigMember toolConfigMember = ToolConfigReader.GetToolConfig();
         private IWebDriver webDriver;
 
 
-        public SyncBrowserFactory()
+        public PageSynchronization()
         {
         }
 
-        public SyncBrowserFactory(IWebDriver webDriver)
+        public PageSynchronization(IWebDriver webDriver)
         {
             this.webDriver = webDriver;
         }
