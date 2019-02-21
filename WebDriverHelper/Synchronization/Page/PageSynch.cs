@@ -5,24 +5,23 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using WebDriverHelper.JScript;
 
-namespace WebDriverHelper.Synchronization.BrowserFactory
+namespace WebDriverHelper.Synchronization.Page
 {
-    public class PageSynchronization : JavaScript
+    public class PageSynch : JavaScript
     {
         public readonly ToolConfigMember toolConfigMember = ToolConfigReader.GetToolConfig();
         private IWebDriver webDriver;
 
-
-        public PageSynchronization()
+        public PageSynch()
         {
         }
 
-        public PageSynchronization(IWebDriver webDriver)
+        public PageSynch(IWebDriver webDriver)
         {
             this.webDriver = webDriver;
         }
 
-        #region Wait Methods Wait, WaitTillAjaxLoad and WaitTillPageLoad
+        #region Wait Methods Wait, WaitUntilAjaxLoad and WaitUntilPageLoad
         public WebDriverWait Wait()
         {
             return new WebDriverWait(webDriver, TimeSpan.FromMilliseconds(toolConfigMember.ObjectWait));
@@ -33,17 +32,17 @@ namespace WebDriverHelper.Synchronization.BrowserFactory
             return new WebDriverWait(webDriver, TimeSpan.FromSeconds(numberOfSeconds));
         }
 
-        public bool WaitTillAjaxLoad()
+        public bool WaitUntilAjaxLoad()
         {
-            return WaitTillAjaxLoad(toolConfigMember.ObjectWait / 1000);
+            return WaitUntilAjaxLoad(toolConfigMember.ObjectWait / 1000);
         }
 
-        public bool WaitTillAjaxLoad(int numberOfSeconds = -1)
+        public bool WaitUntilAjaxLoad(int numberOfSeconds = -1)
         {
             bool isAjaxLoad = false;
             try
             {
-                Wait(numberOfSeconds == -1 ? toolConfigMember.ObjectWait / 1000 : numberOfSeconds).Until((driver) =>
+                Wait(numberOfSeconds == -1 ? toolConfigMember.ObjectWait / 1000 : numberOfSeconds).Until((webDriver) =>
                 {
                     try
                     {
@@ -66,36 +65,39 @@ namespace WebDriverHelper.Synchronization.BrowserFactory
             }
             catch (WebDriverTimeoutException e)
             {
-                Logger.Log(e.Message);
+                Logger.Log("WaitTillAjaxLoad threw WebDriverTimeoutException with message '{0}'", e.Message);
+                return isAjaxLoad;
             }
             return isAjaxLoad;
         }
 
-        public bool WaitTillPageLoad()
+        public bool WaitUntilPageLoad()
         {
-            return WaitTillPageLoad(toolConfigMember.ObjectWait / 1000);
+            return WaitUntilPageLoad(toolConfigMember.ObjectWait / 1000);
         }
 
-        public bool WaitTillPageLoad(int numberOfSeconds)
+        public bool WaitUntilPageLoad(int numberOfSeconds)
         {
             bool isPageLoadCompletely = false;
             try
             {
-                Wait(numberOfSeconds).Until((driver) =>
+                Wait(numberOfSeconds).Until((webDriver) =>
                 {
                     try
                     {
                         isPageLoadCompletely = ExecuteScript(JScriptType.PageLoad, webDriver).ToString().Contains("complete");
                         return isPageLoadCompletely;
                     }
-                    catch (Exception)
+                    catch (Exception exception)
                     {
+                        Logger.Log("WaitTillPageLoad threw Exception with message '{0}'", exception.Message);
                         return isPageLoadCompletely;
                     }
                 });
             }
-            catch (WebDriverTimeoutException)
+            catch (WebDriverTimeoutException exception)
             {
+                Logger.Log("WaitTillPageLoad threw WebDriverTimeoutException with message '{0}'", exception.Message);
                 return isPageLoadCompletely;
             }
             return isPageLoadCompletely;

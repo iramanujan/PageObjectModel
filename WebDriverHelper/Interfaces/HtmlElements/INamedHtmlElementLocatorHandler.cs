@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace WebDriverHelper.Interfaces.HtmlElements
 {
-    class Class1
+    public interface INamedHtmlElementLocatorHandler
     {
+        IHtmlElementLocator HtmlElementLocator { get; }
+        string Name { get; }
     }
 }

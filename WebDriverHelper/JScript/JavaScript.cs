@@ -38,6 +38,12 @@ namespace WebDriverHelper.JScript
 
         [Description("arguments[0].scrollIntoView(true)")]
         ScrollToElementWithTrue = 7,
+
+        [Description("arguments[0].blur()")]
+        RemoveFocus = 8,
+
+        [Description("arguments[0].focus()")]
+        Focus = 9,
     }
 
     public class JavaScript

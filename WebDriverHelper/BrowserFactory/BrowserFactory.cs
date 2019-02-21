@@ -9,11 +9,11 @@ using WebDriverHelper.Interfaces.DriverFactory;
 using WebDriverHelper.JScript;
 using CommonHelper.Helper.Log;
 using static CommonHelper.Helper.Config.ToolConfigMember;
-using WebDriverHelper.Synchronization.BrowserFactory;
+using WebDriverHelper.Synchronization.Page;
 
 namespace WebDriverHelper.BrowserFactory
 {
-    public class BrowserFactory : PageSynchronization
+    public class BrowserFactory : PageSynch
     {
         private readonly IWebDriverFactory webDriverFactory;
         private IWebDriver objWebDriver;
@@ -75,7 +75,7 @@ namespace WebDriverHelper.BrowserFactory
         public BrowserFactory Open()
         {
             webDriver.Navigate().GoToUrl(toolConfigMember.PageUrls);
-            WaitTillPageLoad();
+            WaitUntilPageLoad();
             webDriver.SwitchTo().DefaultContent();
             return this;
         }
@@ -146,8 +146,8 @@ namespace WebDriverHelper.BrowserFactory
                 SwitchTo().Window(handle);
                 if (GetDecodedUrl().Contains(urlPart))
                 {
-                    WaitTillPageLoad();
-                    WaitTillAjaxLoad();
+                    WaitUntilPageLoad();
+                    WaitUntilAjaxLoad();
                     return;
                 }
             }
@@ -178,14 +178,14 @@ namespace WebDriverHelper.BrowserFactory
         {
             Logger.LogExecute("Scroll To Page Top");
             ExecuteScript(JScriptType.ScrollTop, webDriver);
-            WaitTillAjaxLoad();
+            WaitUntilAjaxLoad();
         }
 
         public void ScrollBottom()
         {
             Logger.LogExecute("Scroll To Page Bottom");
             ExecuteScript(JScriptType.ScrollBottom, webDriver);
-            WaitTillAjaxLoad();
+            WaitUntilAjaxLoad();
         }
         #endregion
 

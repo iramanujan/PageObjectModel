@@ -11,7 +11,7 @@ namespace OrangeHRMTest.Base
         [SetUp]
         public void BaseTestOneTimeSetUp()
         {
-            WebDriverContext.BrowserFactory.WaitTillPageLoad();
+            WebDriverContext.BrowserFactory.WaitUntilPageLoad();
             WebDriverContext.BrowserFactory.ClearCookies();
             WebDriverContext.BrowserFactory.Maximize();
         }

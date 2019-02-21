@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dynamitey, Version=2.0.9.136, Culture=neutral, PublicKeyToken=cbf53ea3aeb972c6, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dynamitey.2.0.9.136\lib\net40\Dynamitey.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions, Version=5.6.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.5.6.0\lib\net47\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="ImpromptuInterface, Version=7.0.1.0, Culture=neutral, PublicKeyToken=0b1781c923b2975b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImpromptuInterface.7.0.1\lib\net40\ImpromptuInterface.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.4.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
     </Reference>
@@ -59,6 +68,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Synchronization\Ajax\AjaxSync.cs" />
+    <Compile Include="WebElement\AjaxHtmlElements\AjaxElementLocator.cs" />
     <Compile Include="BrowserFactory\BrowserFactory.cs" />
     <Compile Include="DriverFactory\Chrome\Local\LocalChromeDriver.cs" />
     <Compile Include="DriverFactory\Chrome\Options\ChromeDriverOptions.cs" />
@@ -79,26 +90,34 @@
     <Compile Include="Grid\BrowsersStatusModel.cs" />
     <Compile Include="Grid\GridConfigHelper.cs" />
     <Compile Include="Grid\SlotCountModel.cs" />
-    <Compile Include="HtmlAttributes\TagAttributes.cs" />
-    <Compile Include="HtmlElements\HtmlElement\HtmlTextBox.cs" />
-    <Compile Include="HtmlElements\BaseHtmlElement.cs" />
+    <Compile Include="WebElement\ByExtension.cs" />
+    <Compile Include="WebElement\DefaultElementLocator.cs" />
+    <Compile Include="WebElement\HtmlElements\HtmlAttributes\HtmlAttributesHandler.cs" />
+    <Compile Include="WebElement\HtmlElements\HtmlAttributes\TagAttributes.cs" />
+    <Compile Include="WebElement\HtmlElements\HtmlElement\HtmlTextBox.cs" />
+    <Compile Include="WebElement\HtmlElements\BaseHtmlElement.cs" />
+    <Compile Include="WebElement\HtmlElements\HtmlExtension\HtmlElementExtensions.cs" />
     <Compile Include="Interfaces\BrowserFactory\IBaseBrowser.cs" />
     <Compile Include="Interfaces\DriverFactory\IWebDriverFactory.cs" />
-    <Compile Include="Interfaces\HtmlElements\Class1.cs" />
+    <Compile Include="Interfaces\HtmlElements\IHtmlElementLocator.cs" />
     <Compile Include="Interfaces\HtmlElements\IHtmlElement.cs" />
-    <Compile Include="HtmlElements\HtmlElement\HtmlButton.cs" />
-    <Compile Include="HtmlElements\HtmlElement\HtmlCheckBox.cs" />
-    <Compile Include="HtmlElements\HtmlElement\HtmlCustomComboBox.cs" />
-    <Compile Include="HtmlElements\HtmlElement\HtmlLink.cs" />
-    <Compile Include="HtmlElements\HtmlElement\HtmlRadio.cs" />
-    <Compile Include="HtmlElements\HtmlElement\HtmlSelect.cs" />
-    <Compile Include="HtmlElements\HtmlElement\HtmlTextBlock.cs" />
-    <Compile Include="HtmlElements\HtmlElement\HtmlTextInput.cs" />
+    <Compile Include="WebElement\HtmlElements\HtmlElement\HtmlButton.cs" />
+    <Compile Include="WebElement\HtmlElements\HtmlElement\HtmlCheckBox.cs" />
+    <Compile Include="WebElement\HtmlElements\HtmlElement\HtmlCustomComboBox.cs" />
+    <Compile Include="WebElement\HtmlElements\HtmlElement\HtmlLink.cs" />
+    <Compile Include="WebElement\HtmlElements\HtmlElement\HtmlRadio.cs" />
+    <Compile Include="WebElement\HtmlElements\HtmlElement\HtmlSelect.cs" />
+    <Compile Include="WebElement\HtmlElements\HtmlElement\HtmlTextBlock.cs" />
+    <Compile Include="WebElement\HtmlElements\HtmlElement\HtmlTextInput.cs" />
     <Compile Include="Interfaces\Events\IKeyboardEvents.cs" />
     <Compile Include="Interfaces\Events\IMouseEvents.cs" />
+    <Compile Include="Interfaces\HtmlElements\INamed.cs" />
+    <Compile Include="Interfaces\HtmlElements\INamedHtmlElementLocatorHandler.cs" />
     <Compile Include="JScript\JavaScript.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Synchronization\PageSync\PageSynchronization.cs" />
+    <Compile Include="Synchronization\Ajax\AjaxTimeoutExtensions.cs" />
+    <Compile Include="Synchronization\HtmlElement\HtmlElementSynch.cs" />
+    <Compile Include="Synchronization\Page\PageSynch.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CommonHelper\CommonHelper.csproj">
