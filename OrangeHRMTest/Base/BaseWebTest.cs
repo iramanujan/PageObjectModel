@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using OrangeHRMTest.WebDriverContext;
-using WebDriverHelper.BrowserFactory;
 
 namespace OrangeHRMTest.Base
 {

@@ -92,6 +92,9 @@
     <Compile Include="Grid\SlotCountModel.cs" />
     <Compile Include="WebElement\ByExtension.cs" />
     <Compile Include="WebElement\DefaultElementLocator.cs" />
+    <Compile Include="WebElement\HtmlElementFactory.cs" />
+    <Compile Include="WebElement\HtmlElementFactoryExtension.cs" />
+    <Compile Include="WebElement\HtmlElements\HtmlAttributes\DefaultHtmlPropertyAttributesHandler.cs" />
     <Compile Include="WebElement\HtmlElements\HtmlAttributes\HtmlAttributesHandler.cs" />
     <Compile Include="WebElement\HtmlElements\HtmlAttributes\TagAttributes.cs" />
     <Compile Include="WebElement\HtmlElements\HtmlElement\HtmlTextBox.cs" />
