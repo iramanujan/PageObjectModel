@@ -2,7 +2,7 @@
 using OpenQA.Selenium;
 using System.Linq;
 
-namespace WebDriverHelper.Helper.HtmlElements.HtmlElement
+namespace WebDriverHelper.WebElementFactory.HtmlElements.HtmlElement
 {
     public class HtmlTextBox : BaseHtmlElement
     {

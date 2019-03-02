@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using WebDriverHelper.Interfaces.HtmlElements;
 
-namespace WebDriverHelper.Helper.HtmlElements
+namespace WebDriverHelper.WebElementFactory.HtmlElements
 {
     public class BaseHtmlElement : IHtmlElement
     {

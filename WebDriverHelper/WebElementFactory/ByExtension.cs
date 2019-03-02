@@ -4,7 +4,7 @@ using System.Reflection;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace WebDriverHelper.WebElement
+namespace WebDriverHelper.WebElementFactory
 {
     public static class ByExtension
     {

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebDriverHelper.Helper.HtmlElements.HtmlElement
+namespace WebDriverHelper.WebElementFactory.HtmlElements.HtmlElement
 {
-    class HtmlTextInput
+    class HtmlTextbox
     {
     }
 }

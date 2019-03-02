@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace WebDriverHelper.Helper.HtmlElements.HtmlElement
+namespace WebDriverHelper.WebElementFactory.HtmlElements.HtmlElement
 {
     public class HtmlButton : BaseHtmlElement
     {

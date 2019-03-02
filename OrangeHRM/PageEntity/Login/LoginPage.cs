@@ -1,5 +1,5 @@
 ﻿using OpenQA.Selenium.Support.PageObjects;
-using WebDriverHelper.Helper.HtmlElements.HtmlElement;
+using WebDriverHelper.WebElementFactory.HtmlElements.HtmlElement;
 
 namespace OrangeHRM.PageEntity.Login
 {

@@ -3,7 +3,7 @@ using OpenQA.Selenium.Support.PageObjects;
 using System;
 using System.Reflection;
 
-namespace WebDriverHelper.WebElement.HtmlElements.HtmlAttributes
+namespace WebDriverHelper.WebElementFactory.HtmlElements.HtmlAttributes
 {
     public class DefaultHtmlPropertyAttributesHandler : HtmlAttributesHandler
     {

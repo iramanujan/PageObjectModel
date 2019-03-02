@@ -1,4 +1,4 @@
-﻿namespace WebDriverHelper.HtmlAttributes
+﻿namespace WebDriverHelper.WebElementFactory.HtmlElements.HtmlAttributes
 {
     public static class TagAttributes
     {
