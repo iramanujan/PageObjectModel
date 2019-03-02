@@ -1,6 +1,8 @@
 ﻿using CommonHelper.Helper.Config;
 using CommonHelper.Utils;
 using WebDriverHelper.WebDriverFactory;
+using WebDriverHelper.WebElementFactory.CustomHtmlElements;
+using WebDriverHelper.WebElementFactory.HtmlElements.HtmlElement;
 
 namespace ConsoleApp1
 {
@@ -15,9 +17,25 @@ namespace ConsoleApp1
 
             //var ObjLocalChromeDriver = new LocalChromeDriver().InitializeWebDriver();
             ObjLocalChromeDriver.Navigate().GoToUrl(url);
+
+            System.Threading.Thread.Sleep(10 * 1000);
+            var userName = CustomFindElement.FindHtmlElement(ObjLocalChromeDriver,How.XPath, "//*[@id='txtUsername']");
+            userName.SendKeys("admin");
+            
+
+
+            var password = CustomFindElement.FindHtmlElement(ObjLocalChromeDriver, How.CssSelector, "#txtPassword");
+            password.SendKeys("admin");
+
+
+            CustomFindElement.FindHtmlElement(ObjLocalChromeDriver, How.CssSelector, "#btnLogin").Click();
+
             ObjLocalChromeDriver.Close();
             ObjLocalChromeDriver.Quit();
             ObjLocalChromeDriver.Dispose();
+
+
+
             ProcessUtils.KillProcessByCmd("iexplore.exe");
             ProcessUtils.KillProcesses("IEDriver.exe");
             

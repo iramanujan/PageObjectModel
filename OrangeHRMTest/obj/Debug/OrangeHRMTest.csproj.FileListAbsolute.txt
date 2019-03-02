@@ -55,6 +55,10 @@ D:\Office-Doc\PageObjectModel\OrangeHRMTest\bin\Debug\Newtonsoft.Json.xml
 D:\Office-Doc\PageObjectModel\OrangeHRMTest\obj\Debug\OrangeHRMTest.csproj.CopyComplete
 D:\Office-Doc\PageObjectModel\OrangeHRMTest\obj\Debug\OrangeHRMTest.dll
 D:\Office-Doc\PageObjectModel\OrangeHRMTest\obj\Debug\OrangeHRMTest.pdb
+D:\C#\PageObjectModel\OrangeHRMTest\bin\Debug\NUnit3.TestAdapter.dll
+D:\C#\PageObjectModel\OrangeHRMTest\bin\Debug\NUnit3.TestAdapter.pdb
+D:\C#\PageObjectModel\OrangeHRMTest\bin\Debug\nunit.engine.dll
+D:\C#\PageObjectModel\OrangeHRMTest\bin\Debug\nunit.engine.api.dll
 D:\C#\PageObjectModel\OrangeHRMTest\bin\Debug\packages.config
 D:\C#\PageObjectModel\OrangeHRMTest\bin\Debug\OrangeHRMTest.dll.config
 D:\C#\PageObjectModel\OrangeHRMTest\bin\Debug\OrangeHRMTest.dll

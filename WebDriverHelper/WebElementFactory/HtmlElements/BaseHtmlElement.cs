@@ -1,4 +1,6 @@
-﻿using CommonHelper.Helper.Log;
+﻿using CommonHelper.Helper.Config;
+using CommonHelper.Helper.Log;
+using CommonHelper.Helper.Wait;
 using Microsoft.CSharp.RuntimeBinder;
 using OpenQA.Selenium;
 using System;
@@ -10,8 +12,10 @@ namespace WebDriverHelper.WebElementFactory.HtmlElements
 {
     public class BaseHtmlElement : IHtmlElement
     {
+        private static readonly ToolConfigMember toolConfigMember = ToolConfigReader.GetToolConfig();
         public IWebElement htmlElement;
-        private TimeSpan defaultWaitTimeout;
+        private TimeSpan defaultWaitTimeout  = TimeSpan.FromMilliseconds(toolConfigMember.ObjectWait);
+        private TimeSpan defaultPollingTime = TimeSpan.FromMilliseconds(toolConfigMember.PollTime);
         private IWebDriver webDriver;
 
         public BaseHtmlElement()
@@ -178,56 +182,52 @@ namespace WebDriverHelper.WebElementFactory.HtmlElements
 
         public void WaitForAttributeContainsValue(string attribute, string value)
         {
-            //var pollWait = TimeSpan.FromSeconds(3);
-            //this.WithTemporaryTimeout(pollWait, _ =>
-            //       Waiter.SpinWaitEnsureSatisfied(() => _.GetAttribute(attribute).Contains(value),
-            //         defaultElementWaitTimeout, TimeSpan.FromSeconds(1),
-            //       $"Element attribute '{attribute}' still not contains value'{value}"));
+            WaitForAttributeContainsValue(attribute, value,defaultWaitTimeout);
         }
 
-        public void WaitForAttributeContainsValue(string attribute, string value, TimeSpan timeSpan)
+        public void WaitForAttributeContainsValue(string attribute, string value, TimeSpan timeOut)
         {
-            throw new NotImplementedException();
+            Waiter.SpinWaitEnsureSatisfied(() => GetAttribute(attribute).Contains(value),timeOut, defaultPollingTime,$"Element attribute '{attribute}' still not contains value'{value}");
         }
 
         public void WaitForDisappearence()
         {
-            throw new NotImplementedException();
+            WaitForDisappearence(defaultWaitTimeout);
         }
 
-        public void WaitForDisappearence(TimeSpan timeSpan)
+        public void WaitForDisappearence(TimeSpan timeOut)
         {
-            throw new NotImplementedException();
+            Waiter.SpinWaitEnsureSatisfied(() => !IsDisplayed, timeOut, defaultPollingTime, $"Element still displayed, but should disappeared");
         }
 
         public void WaitForDisplayed()
         {
-            throw new NotImplementedException();
+            WaitForDisplayed(defaultWaitTimeout);
         }
 
-        public void WaitForDisplayed(TimeSpan timeSpan)
+        public void WaitForDisplayed(TimeSpan timeOut)
         {
-            throw new NotImplementedException();
+            Waiter.SpinWaitEnsureSatisfied(() => IsDisplayed, timeOut, defaultPollingTime, $"Element still not displayed, but should be");
         }
 
         public void WaitForEnablling()
         {
-            throw new NotImplementedException();
+            WaitForEnablling(defaultWaitTimeout);
         }
 
-        public void WaitForEnablling(TimeSpan timeSpan)
+        public void WaitForEnablling(TimeSpan timeOut)
         {
-            throw new NotImplementedException();
+            Waiter.SpinWaitEnsureSatisfied(() => IsEnabled, timeOut, defaultPollingTime, $"Element still not visible, but should be");
         }
 
         public void WaitForExistance()
         {
-            throw new NotImplementedException();
+            WaitForExistance(defaultWaitTimeout);
         }
 
-        public void WaitForExistance(TimeSpan timeSpan)
+        public void WaitForExistance(TimeSpan timeOut)
         {
-            throw new NotImplementedException();
+            Waiter.SpinWaitEnsureSatisfied(() => Location != null , timeOut, defaultPollingTime, $"Element still not exists, but should be");
         }
     }
 }

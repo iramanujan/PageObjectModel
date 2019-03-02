@@ -48,7 +48,6 @@ D:\C#\PageObjectModel\ConsoleApp1\bin\Debug\WebDriver.dll
 D:\C#\PageObjectModel\ConsoleApp1\bin\Debug\WebDriverHelper.dll
 D:\C#\PageObjectModel\ConsoleApp1\bin\Debug\log4net.dll
 D:\C#\PageObjectModel\ConsoleApp1\bin\Debug\FluentAssertions.dll
-D:\C#\PageObjectModel\ConsoleApp1\bin\Debug\WebDriver.Support.dll
 D:\C#\PageObjectModel\ConsoleApp1\bin\Debug\Newtonsoft.Json.dll
 D:\C#\PageObjectModel\ConsoleApp1\bin\Debug\CommonHelper.pdb
 D:\C#\PageObjectModel\ConsoleApp1\bin\Debug\WebDriverHelper.pdb
@@ -56,7 +55,6 @@ D:\C#\PageObjectModel\ConsoleApp1\bin\Debug\WebDriver.xml
 D:\C#\PageObjectModel\ConsoleApp1\bin\Debug\log4net.xml
 D:\C#\PageObjectModel\ConsoleApp1\bin\Debug\FluentAssertions.pdb
 D:\C#\PageObjectModel\ConsoleApp1\bin\Debug\FluentAssertions.xml
-D:\C#\PageObjectModel\ConsoleApp1\bin\Debug\WebDriver.Support.xml
 D:\C#\PageObjectModel\ConsoleApp1\bin\Debug\Newtonsoft.Json.pdb
 D:\C#\PageObjectModel\ConsoleApp1\bin\Debug\Newtonsoft.Json.xml
 D:\C#\PageObjectModel\ConsoleApp1\obj\Debug\ConsoleApp1.csprojAssemblyReference.cache

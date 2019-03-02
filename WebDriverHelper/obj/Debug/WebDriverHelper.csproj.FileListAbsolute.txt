@@ -45,10 +45,6 @@ D:\Office-Doc\PageObjectModel\WebDriverHelper\bin\Debug\log4net.xml
 D:\Office-Doc\PageObjectModel\WebDriverHelper\obj\Debug\WebDriverHelper.csproj.CopyComplete
 D:\Office-Doc\PageObjectModel\WebDriverHelper\obj\Debug\WebDriverHelper.dll
 D:\Office-Doc\PageObjectModel\WebDriverHelper\obj\Debug\WebDriverHelper.pdb
-D:\C#\PageObjectModel\WebDriverHelper\obj\Debug\WebDriverHelper.csprojAssemblyReference.cache
-D:\C#\PageObjectModel\WebDriverHelper\obj\Debug\WebDriverHelper.csproj.CoreCompileInputs.cache
-D:\C#\PageObjectModel\WebDriverHelper\obj\Debug\WebDriverHelper.dll
-D:\C#\PageObjectModel\WebDriverHelper\obj\Debug\WebDriverHelper.pdb
 D:\C#\PageObjectModel\WebDriverHelper\bin\Debug\packages.config
 D:\C#\PageObjectModel\WebDriverHelper\bin\Debug\WebDriverHelper.dll
 D:\C#\PageObjectModel\WebDriverHelper\bin\Debug\WebDriverHelper.pdb
@@ -72,4 +68,8 @@ D:\C#\PageObjectModel\WebDriverHelper\bin\Debug\Newtonsoft.Json.xml
 D:\C#\PageObjectModel\WebDriverHelper\bin\Debug\WebDriver.xml
 D:\C#\PageObjectModel\WebDriverHelper\bin\Debug\WebDriver.Support.xml
 D:\C#\PageObjectModel\WebDriverHelper\bin\Debug\log4net.xml
+D:\C#\PageObjectModel\WebDriverHelper\obj\Debug\WebDriverHelper.csprojAssemblyReference.cache
+D:\C#\PageObjectModel\WebDriverHelper\obj\Debug\WebDriverHelper.csproj.CoreCompileInputs.cache
 D:\C#\PageObjectModel\WebDriverHelper\obj\Debug\WebDriverHelper.csproj.CopyComplete
+D:\C#\PageObjectModel\WebDriverHelper\obj\Debug\WebDriverHelper.dll
+D:\C#\PageObjectModel\WebDriverHelper\obj\Debug\WebDriverHelper.pdb

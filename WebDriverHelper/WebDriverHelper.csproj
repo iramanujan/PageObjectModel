@@ -88,9 +88,8 @@
     <Compile Include="Grid\BrowsersStatusModel.cs" />
     <Compile Include="Grid\GridConfigHelper.cs" />
     <Compile Include="Grid\SlotCountModel.cs" />
-    <Compile Include="WebElementFactory\ByExtension.cs" />
-    <Compile Include="WebElementFactory\HtmlElements\HtmlAttributes\DefaultHtmlPropertyAttributesHandler.cs" />
-    <Compile Include="WebElementFactory\HtmlElements\HtmlAttributes\HtmlAttributesHandler.cs" />
+    <Compile Include="WebElementFactory\CustomHtmlElements\ByExtension.cs" />
+    <Compile Include="WebElementFactory\CustomHtmlElements\CustomFindElement.cs" />
     <Compile Include="WebElementFactory\HtmlElements\HtmlAttributes\TagAttributes.cs" />
     <Compile Include="WebElementFactory\HtmlElements\HtmlElement\HtmlTextBox.cs" />
     <Compile Include="WebElementFactory\HtmlElements\BaseHtmlElement.cs" />
@@ -125,7 +124,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Synchronization\Ajax\" />
     <Folder Include="WebDriverFactory\Edge\Local\" />
     <Folder Include="WebDriverFactory\Edge\Remote\" />
     <Folder Include="WebDriverFactory\Opera\Local\" />

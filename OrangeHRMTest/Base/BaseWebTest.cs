@@ -5,11 +5,12 @@ namespace OrangeHRMTest.Base
 {
     public class BaseWebTest
     {
-        public WebDriverContextHelper WebDriverContext => new WebDriverContextHelper();
+        public WebDriverContextHelper WebDriverContext = null;
 
         [SetUp]
         public void BaseTestOneTimeSetUp()
         {
+            WebDriverContext = new WebDriverContextHelper();
             WebDriverContext.BrowserFactory.WaitUntilPageLoad();
             WebDriverContext.BrowserFactory.ClearCookies();
             WebDriverContext.BrowserFactory.Maximize();
