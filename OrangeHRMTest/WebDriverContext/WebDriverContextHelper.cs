@@ -1,6 +1,6 @@
 ﻿using CommonHelper.Helper.Config;
-using WebDriverHelper.BrowserFactory;
-using WebDriverHelper.DriverFactory;
+using WebDriverHelper.WebBrowserFactory;
+using WebDriverHelper.WebDriverFactory;
 using WebDriverHelper.Interfaces.DriverFactory;
 
 namespace OrangeHRMTest.WebDriverContext

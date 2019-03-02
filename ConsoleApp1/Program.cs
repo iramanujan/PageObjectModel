@@ -1,6 +1,6 @@
 ﻿using CommonHelper.Helper.Config;
 using CommonHelper.Utils;
-using WebDriverHelper.DriverFactory;
+using WebDriverHelper.WebDriverFactory;
 
 namespace ConsoleApp1
 {

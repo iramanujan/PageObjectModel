@@ -68,22 +68,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Synchronization\Ajax\AjaxSync.cs" />
-    <Compile Include="WebElement\AjaxHtmlElements\AjaxElementLocator.cs" />
-    <Compile Include="BrowserFactory\BrowserFactory.cs" />
-    <Compile Include="DriverFactory\Chrome\Local\LocalChromeDriver.cs" />
-    <Compile Include="DriverFactory\Chrome\Options\ChromeDriverOptions.cs" />
-    <Compile Include="DriverFactory\Base\BaseDriverFactory.cs" />
-    <Compile Include="DriverFactory\Base\BaseLocalDriverFactory.cs" />
-    <Compile Include="DriverFactory\Base\BaseRemoteDriverFactory.cs" />
-    <Compile Include="DriverFactory\Chrome\Remote\RemoteChromeDriver.cs" />
-    <Compile Include="DriverFactory\FireFox\Local\LocalFireFoxDriver.cs" />
-    <Compile Include="DriverFactory\FireFox\Profile\FireFoxDriverProfile.cs" />
-    <Compile Include="DriverFactory\FireFox\Remote\RemoteFireFoxDriver.cs" />
-    <Compile Include="DriverFactory\InternetExplorer\Local\LocalInternetExplorerDriver.cs" />
-    <Compile Include="DriverFactory\InternetExplorer\Options\InternetExplorerDriverOptions.cs" />
-    <Compile Include="DriverFactory\InternetExplorer\Remote\RemoteInternetExplorerDriver.cs" />
-    <Compile Include="DriverFactory\WebDriverFactory.cs" />
+    <Compile Include="WebBrowserFactory\BrowserFactory.cs" />
+    <Compile Include="WebDriverFactory\Chrome\Local\LocalChromeDriver.cs" />
+    <Compile Include="WebDriverFactory\Chrome\Options\ChromeDriverOptions.cs" />
+    <Compile Include="WebDriverFactory\Base\BaseDriverFactory.cs" />
+    <Compile Include="WebDriverFactory\Base\BaseLocalDriverFactory.cs" />
+    <Compile Include="WebDriverFactory\Base\BaseRemoteDriverFactory.cs" />
+    <Compile Include="WebDriverFactory\Chrome\Remote\RemoteChromeDriver.cs" />
+    <Compile Include="WebDriverFactory\FireFox\Local\LocalFireFoxDriver.cs" />
+    <Compile Include="WebDriverFactory\FireFox\Profile\FireFoxDriverProfile.cs" />
+    <Compile Include="WebDriverFactory\FireFox\Remote\RemoteFireFoxDriver.cs" />
+    <Compile Include="WebDriverFactory\InternetExplorer\Local\LocalInternetExplorerDriver.cs" />
+    <Compile Include="WebDriverFactory\InternetExplorer\Options\InternetExplorerDriverOptions.cs" />
+    <Compile Include="WebDriverFactory\InternetExplorer\Remote\RemoteInternetExplorerDriver.cs" />
+    <Compile Include="WebDriverFactory\WebDriverFactory.cs" />
     <Compile Include="Events\KeyboardEvents.cs" />
     <Compile Include="Events\MouseEvents.cs" />
     <Compile Include="Grid\BrowserSlotsCountModel.cs" />
@@ -91,15 +89,11 @@
     <Compile Include="Grid\GridConfigHelper.cs" />
     <Compile Include="Grid\SlotCountModel.cs" />
     <Compile Include="WebElement\ByExtension.cs" />
-    <Compile Include="WebElement\DefaultElementLocator.cs" />
-    <Compile Include="WebElement\HtmlElementFactory.cs" />
-    <Compile Include="WebElement\HtmlElementFactoryExtension.cs" />
     <Compile Include="WebElement\HtmlElements\HtmlAttributes\DefaultHtmlPropertyAttributesHandler.cs" />
     <Compile Include="WebElement\HtmlElements\HtmlAttributes\HtmlAttributesHandler.cs" />
     <Compile Include="WebElement\HtmlElements\HtmlAttributes\TagAttributes.cs" />
     <Compile Include="WebElement\HtmlElements\HtmlElement\HtmlTextBox.cs" />
     <Compile Include="WebElement\HtmlElements\BaseHtmlElement.cs" />
-    <Compile Include="WebElement\HtmlElements\HtmlExtension\HtmlElementExtensions.cs" />
     <Compile Include="Interfaces\BrowserFactory\IBaseBrowser.cs" />
     <Compile Include="Interfaces\DriverFactory\IWebDriverFactory.cs" />
     <Compile Include="Interfaces\HtmlElements\IHtmlElementLocator.cs" />
@@ -118,7 +112,6 @@
     <Compile Include="Interfaces\HtmlElements\INamedHtmlElementLocatorHandler.cs" />
     <Compile Include="JScript\JavaScript.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Synchronization\Ajax\AjaxTimeoutExtensions.cs" />
     <Compile Include="Synchronization\HtmlElement\HtmlElementSynch.cs" />
     <Compile Include="Synchronization\Page\PageSynch.cs" />
   </ItemGroup>
@@ -132,10 +125,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DriverFactory\Edge\Local\" />
-    <Folder Include="DriverFactory\Edge\Remote\" />
-    <Folder Include="DriverFactory\Opera\Local\" />
-    <Folder Include="DriverFactory\Opera\Remote\" />
+    <Folder Include="Synchronization\Ajax\" />
+    <Folder Include="WebDriverFactory\Edge\Local\" />
+    <Folder Include="WebDriverFactory\Edge\Remote\" />
+    <Folder Include="WebDriverFactory\Opera\Local\" />
+    <Folder Include="WebDriverFactory\Opera\Remote\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Selenium.Chrome.WebDriver.2.45\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.2.45\build\Selenium.Chrome.WebDriver.targets')" />

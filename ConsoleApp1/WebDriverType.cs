@@ -1,9 +1,9 @@
-﻿using WebDriverHelper.DriverFactory.Chrome.Local;
-using WebDriverHelper.DriverFactory.Chrome.Remote;
-using WebDriverHelper.DriverFactory.FireFox.Local;
-using WebDriverHelper.DriverFactory.FireFox.Remote;
-using WebDriverHelper.DriverFactory.InternetExplorer.Local;
-using WebDriverHelper.DriverFactory.InternetExplorer.Remote;
+﻿using WebDriverHelper.WebDriverFactory.Chrome.Local;
+using WebDriverHelper.WebDriverFactory.Chrome.Remote;
+using WebDriverHelper.WebDriverFactory.FireFox.Local;
+using WebDriverHelper.WebDriverFactory.FireFox.Remote;
+using WebDriverHelper.WebDriverFactory.InternetExplorer.Local;
+using WebDriverHelper.WebDriverFactory.InternetExplorer.Remote;
 using WebDriverHelper.Interfaces.DriverFactory;
 using static CommonHelper.Helper.Config.ToolConfigMember;
 
